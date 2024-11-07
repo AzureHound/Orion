@@ -1,0 +1,31 @@
+[user]
+    name = Wolf
+    email = 183492338+AzureHex@users.noreply.github.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    pager = delta
+
+[color]
+    ui = auto
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[delta]
+    side-by-side = true
+#    line-numbers = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
