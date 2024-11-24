@@ -1,13 +1,11 @@
 # Starship
-#eval "$(starship init zsh)"
-#export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Ohmyposh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
-fi
-
-export BAT_THEME="Dracula"
+#if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
+#fi
 
 # History
 HISTFILE=$HOME/.zsh_history
@@ -48,6 +46,8 @@ echo -ne "\e[5 q"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+export BAT_THEME="Dracula"
+
 # fzf integrations
 fcd() {
   local dir
@@ -57,36 +57,20 @@ fcd() {
 # fzf colors
 export FZF_DEFAULT_OPTS="--color=bg+:-1,gutter:-1"
 
-# fzf-file-manager
-function fzf-file-manager {
-    local path="${1:-.}"
-
-    # Get files and pipe to fzf with bat preview
-    local selectedFile=$(/usr/bin/find "$path" -type f | /opt/homebrew/bin/fzf --preview '/opt/homebrew/bin/bat --style=numbers --color=always {}' --preview-window=right:50%:wrap --select-1 --exit-0)
-
-    # Check if a file was selected
-    if [[ -n "$selectedFile" ]]; then
-        # Open the selected file in Neovim
-        /opt/homebrew/bin/nvim "$selectedFile" || echo "Failed to open file in Neovim."
-    else
-        echo "No file selected."
-    fi
-}
-
 # nvims
-function nvims() {
-  items=$(find $HOME/.config -maxdepth 2 -name "init.lua" -type f -execdir sh -c 'pwd | xargs basename' \;)
-  selected=$(printf "%s\n" "${items[@]}" | \
-    FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS-} --prompt='   Neovim Configs' --preview-window 'right:border-left:50%:<40(right:border-left:50%:hidden)' --preview 'lsd -l -A --tree --depth=1 --color=always --blocks=size,name ~/.config/{} | head -200'" \
-    fzf)
-
-  if [[ -z $selected ]]; then
-    return 0
-  elif [[ $selected == "nvim" ]]; then
-    selected=""
-  fi
-  NVIM_APPNAME=$selected nvim "$@"
-}
+#function nvims() {
+#  items=$(find $HOME/.config -maxdepth 2 -name "init.lua" -type f -execdir sh -c 'pwd | xargs basename' \;)
+#  selected=$(printf "%s\n" "${items[@]}" | \
+#    FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS-} --prompt='   Neovim Configs' --preview-window 'right:border-left:50%:<40(right:border-left:50%:hidden)' --preview 'lsd -l -A --tree --depth=1 --color=always --blocks=size,name ~/.config/{} | head -200'" \
+#    fzf)
+#
+#  if [[ -z $selected ]]; then
+#    return 0
+#  elif [[ $selected == "nvim" ]]; then
+#    selected=""
+#  fi
+#  NVIM_APPNAME=$selected nvim "$@"
+#}
 
 # fzf-nvim
 function fzf-nvim {
@@ -100,38 +84,6 @@ function fzf-nvim {
         fi
     else
         echo "No file selected."
-    fi
-}
-
-# fzf-nano
-function fzf-nano {
-    file=$(fzf --height 100% --preview 'bat --style=numbers --color=always {}')
-    if [ -n "$file" ]; then
-        nanoPath="/usr/bin/nano"  # Path to Nano
-        if command -v nano &> /dev/null; then
-            "$nanoPath" "$file" || echo "Failed to open Nano."
-        else
-            echo "Nano is not installed."
-        fi
-    else
-        echo "No file selected."
-    fi
-}
-
-# git
-function github {
-    if [ $# -eq 0 ]; then
-        echo "Usage: github <commit-message>"
-        return 1
-    fi
-
-    git add .
-    git commit -m "$*"
-
-    if git push; then
-        echo "Changes pushed successfully."
-    else
-        echo "Failed to push changes."
     fi
 }
 
@@ -149,7 +101,7 @@ alias vim=nvim
 alias nvs=nvims
 alias tmux='tmux -f ~/.tmux.conf'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias commits='/Users/eyes/.scripts/git-commits.sh'
+alias commits='/Users/eyes/.local/bin/git-commits.sh'
 alias rain='cmatrix -C yellow'
 alias bonsai='cbonsai --seed 119 --live'
 
