@@ -92,10 +92,3 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-#function fish_greeting
-#    if type -q colorscript
-#        colorscript random
-#    end
-#end
-
-#set -U fish_greeting ""
