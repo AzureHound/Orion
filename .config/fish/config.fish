@@ -87,6 +87,20 @@ set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
 #    nvim $argv
 #end
 
+function neovide
+    # Set environment variables for Neovide options
+    set -x NEOVIDE_FRAME buttonless
+    set -x NEOVIDE_TITLE_HIDDEN 1
+
+    # Ensure that 'neovide' is available and run it
+    if test -x /opt/homebrew/bin/neovide
+        # Run Neovide with any arguments passed to the function
+        /opt/homebrew/bin/neovide $argv
+    else
+        echo "Error: neovide command not found at /opt/homebrew/bin/neovide."
+    end
+end
+
 # backups
 function backup --argument filename
     cp $filename $filename.bak
