@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 config.check_for_updates = false
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 20
+config.font_size = 18
 --config.line_height = 1.0
 config.color_scheme = 'Catppuccin Macchiato'
 config.enable_tab_bar = false
@@ -15,8 +15,8 @@ config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_and_split_indices_are_zero_based = false
-config.initial_cols = 160
-config.initial_rows = 40
+config.initial_cols = 170
+config.initial_rows = 44
 config.default_cursor_style = 'BlinkingBar'
 config.audible_bell = "SystemBeep"
 config.adjust_window_size_when_changing_font_size = true
@@ -36,10 +36,10 @@ config.font_shaper = "Harfbuzz"
 config.harfbuzz_features = { 'zero' }
 
 config.window_padding = {
-    left = '0cell',
-    right = '0cell',
-    top = '0cell',
-    bottom = '0cell',
+    left = '0.8cell',
+    right = '0.8cell',
+    top = '0.8cell',
+    bottom = '0.4cell',
 }
 
 -- Define the colors based on your preference
