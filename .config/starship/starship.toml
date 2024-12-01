@@ -18,7 +18,7 @@ $cmd_duration\
 $line_break\
 $character"""
 
-add_newline = true
+add_newline = true 
 palette = 'space' # catppuccin, nord, onedark, space 
 [os]
 format = '[$symbol](red)'

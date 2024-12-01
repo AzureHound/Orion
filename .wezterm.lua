@@ -38,7 +38,7 @@ config.harfbuzz_features = { 'zero' }
 config.window_padding = {
     left = '0.8cell',
     right = '0.8cell',
-    top = '0.8cell',
+    top = '0.4cell',
     bottom = '0.4cell',
 }
 
