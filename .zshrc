@@ -88,20 +88,16 @@ function fzf-nvim {
 }
 
 # aliasis
-alias la='ls -a'
-alias l='ls -CF'
-alias ll='ls -l'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias ls='eza --icons=auto --color=always'
-alias tree='ls -a -T --git-ignore'
+alias cd=z
+alias la='eza -a --icons'
+alias ls='eza --icons'
+alias ll='eza -l --icons'
+alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
-alias vim=nvim
-alias nvs=nvims
 alias tmux='tmux -f ~/.tmux.conf'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias commits='/Users/eyes/.local/bin/git-commits.sh'
-alias rain='cmatrix -C yellow'
+alias commits='~/.local/bin/git-commits.sh'
+alias doom='~/.local/bin/doom'
+alias rain='~/.local/bin/unimatrix'
+alias clock='tty-clock -sbc'
 alias bonsai='cbonsai --seed 119 --live'
-

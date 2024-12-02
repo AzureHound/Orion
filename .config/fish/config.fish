@@ -24,9 +24,10 @@ atuin init fish | source
 
 # aliasis
 alias cd=z
-alias la='eza -a'
-alias ls=eza
-alias tree='eza -a -T --git-ignore'
+alias la='eza -a --icons'
+alias ls='eza --icons'
+alias ll='eza -l --icons'
+alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias tmux='tmux -f ~/.tmux.conf'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
@@ -105,4 +106,3 @@ end
 function backup --argument filename
     cp $filename $filename.bak
 end
-
