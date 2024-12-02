@@ -26,7 +26,7 @@ atuin init fish | source
 alias cd=z
 alias la='eza -a --icons'
 alias ls='eza --icons'
-alias ll='eza -l --icons'
+alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias tmux='tmux -f ~/.tmux.conf'
