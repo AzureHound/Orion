@@ -88,7 +88,6 @@ function fzf-nvim {
 }
 
 # aliasis
-alias cd=z
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -l --icons'
