@@ -1,4 +1,5 @@
 format = """
+󰀵 \
 $directory\
 $git_branch\
 $git_status\
@@ -25,7 +26,11 @@ format = '[$symbol](red)'
 disabled = false
 
 [os.symbols]
-Debian = ""
+Arch = '󰣇 '
+Debian = " "
+Ubuntu = ' '
+Macos = '󰀵'
+Windows = ' '
 
 [character]
 success_symbol = '[➜](bold green)'
