@@ -88,7 +88,7 @@ set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
 #    nvim $argv
 #end
 
-# Ollama
+# ollama
 function ollama-serve
     ollama serve > /dev/null 2>&1 &
 end
