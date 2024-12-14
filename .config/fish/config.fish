@@ -34,7 +34,8 @@ alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent B
 alias commits='~/.local/bin/git-commits.sh'
 alias clock='tty-clock -sbc'
 alias bonsai='cbonsai --seed 119 --live'
-alias rain='~/.local/bin/unimatrix'
+alias unimatrix='~/.local/bin/unimatrix'
+alias rain="unimatrix -n -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
 
 set -x HOMEBREW_NO_ENV_HINTS 1

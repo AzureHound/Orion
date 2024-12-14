@@ -85,7 +85,7 @@ config.keys = {
     },
     {
         mods = "LEADER",
-        key = "-",
+        key = "_",
         action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
     },
     {
