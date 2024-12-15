@@ -95,12 +95,12 @@ config.keys = {
     },
     {
         mods = "LEADER",
-        key = "j",
+        key = "k",
         action = wezterm.action.ActivatePaneDirection "Down"
     },
     {
         mods = "LEADER",
-        key = "k",
+        key = "j",
         action = wezterm.action.ActivatePaneDirection "Up"
     },
     {
