@@ -56,7 +56,7 @@ config.colors = {
 }
 
 -- tmux
-config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "x", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
     {
         mods = "LEADER",
