@@ -14,7 +14,7 @@ rm -rf ~/Library/Application\ Support/Homebrew/analytics
 brew install --cask font-jetbrains-mono-nerd-font font-iosevka-nerd-font font-josefin-sans font-comic-mono
 
 # Homebrew Casks
-brew install --cask iina localsend obsidian raycast thunderbird wezterm whatsapp zed zen-browser
+brew install --cask iina localsend monitorcontrol obsidian raycast thunderbird wezterm whatsapp zed zen-browser
 
 # Homebrew Formulae
 brew install aria2 atuin bat btop cbonsai curl duf eza fastfetch ffmpeg figlet fish fzf gcc git git-delta grep lazygit lsd mailsy neovide neovim nu nushell oh-my-posh speedtest-cli starship syncthing telegram tmux warp wget yazi yt-dlp zoxide zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
