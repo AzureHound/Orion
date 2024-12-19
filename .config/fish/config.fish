@@ -116,3 +116,9 @@ end
 function backup --argument filename
     cp $filename $filename.bak
 end
+
+# curl
+fish_add_path /opt/homebrew/opt/curl/bin
+  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
+  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
+
