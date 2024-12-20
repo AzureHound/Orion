@@ -31,6 +31,7 @@ alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias tmux='tmux -f ~/.tmux.conf'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias gen='tgpt -i'
 alias clock='tty-clock -sbc'
 alias bonsai='cbonsai --seed 119 --live'
 alias unimatrix='~/.local/bin/unimatrix'
@@ -88,15 +89,6 @@ set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
 #    nvim $argv
 #end
 
-# ollama
-function ollama-serve
-    ollama serve > /dev/null 2>&1 &
-end
-
-function ollama-kill
-    pkill ollama
-end
-
 # neovide
 function neovide
     # Set environment variables for Neovide options
@@ -110,6 +102,15 @@ function neovide
     else
         echo "Error: neovide command not found at /opt/homebrew/bin/neovide."
     end
+end
+
+# ollama
+function ollama-serve
+    ollama serve > /dev/null 2>&1 &
+end
+
+function ollama-kill
+    pkill ollama
 end
 
 # backups
