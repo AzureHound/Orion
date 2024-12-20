@@ -55,8 +55,8 @@ config.colors = {
     split = "#414868",
 }
 
--- tmux
-config.leader = { key = "x", mods = "ALT", timeout_milliseconds = 2000 }
+-- Keybinds
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
     {
         mods = "LEADER",
@@ -135,7 +135,7 @@ config.keys = {
     },
 }
 
-for i = 0, 9 do
+for i = 1, 9 do
     -- leader + number to activate that tab
     table.insert(config.keys, {
         key = tostring(i),
