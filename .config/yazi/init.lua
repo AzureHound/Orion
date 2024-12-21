@@ -36,10 +36,6 @@ require("zoxide"):setup({
     update_db = true,
 })
 
-require("session"):setup({
-    sync_yanked = true,
-})
-
 require("searchjump"):setup({
     unmatch_fg = catppuccin_palette.overlay0,
     match_str_fg = catppuccin_palette.peach,
@@ -79,7 +75,7 @@ require("yatline"):setup({
 
     selected = { icon = "󰻭", fg = catppuccin_palette.yellow },
     copied = { icon = "", fg = catppuccin_palette.green },
-    cut = { icon = "", fg = catppuccin_palette.red },
+    cut = { icon = "", fg = catppuccin_palette.red},
 
     total = { icon = "", fg = catppuccin_palette.yellow },
     succ = { icon = "", fg = catppuccin_palette.green },
@@ -180,4 +176,5 @@ require("yatline-githead"):setup({
     untracked_color = catppuccin_palette.pink,
 })
 
+-- require("git"):setup()
 require("git"):setup()
