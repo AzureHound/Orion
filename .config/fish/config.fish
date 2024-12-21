@@ -5,6 +5,8 @@ set -xg XDG_DATA_HOME $HOME/.local/share
 set -xg XDG_STATE_HOME $HOME/.local/state
 set -xg XDG_BIN_HOME $HOME/.local/bin
 
+#oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
+
 # Starship Prompt
 function starship_transient_prompt_func
   starship module character
@@ -20,7 +22,11 @@ enable_transience
 
 atuin init fish | source
 
-#oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
+# bat
+set -gx BAT_THEME "base16-256" # base16-256, Dracula
+
+# zoxide
+zoxide init fish | source
 
 # aliasis
 alias cd=z
@@ -39,6 +45,17 @@ alias unimatrix='~/.local/bin/unimatrix'
 alias rain="unimatrix -n -c yellow -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
 
+# backups
+function backup --argument filename
+    cp $filename $filename.bak
+end
+
+# curl
+fish_add_path /opt/homebrew/opt/curl/bin
+  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
+  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
+
+# homebrew
 set -x HOMEBREW_NO_ENV_HINTS 1
 
 if test -d /home/linuxbrew/.linuxbrew
@@ -56,12 +73,6 @@ if test -d /home/linuxbrew/.linuxbrew
       /opt/homebrew/bin/brew shellenv | source
 end
 
-# zoxide
-zoxide init fish | source
-
-# bat
-set -gx BAT_THEME "base16-256" # base16-256, Dracula
-
 # FZF
 set -xg FZF_DEFAULT_COMMAND fd
 set -xg FZF_DEFAULT_OPTS "--height=90% --layout=reverse --info=inline --border rounded --margin=1 --padding=1 \
@@ -74,6 +85,19 @@ set -xg FZF_DEFAULT_OPTS "--height=90% --layout=reverse --info=inline --border r
 set -xg fzf_preview_dir_cmd eza --long --header --icons --all --color=always --group-directories-first --hyperlink
 set -xg fzf_fd_opts --hidden --color=always
 set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
+
+# yazi
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+# editor
+export EDITOR=nvim
 
 # nvims
 #function neovims
@@ -113,14 +137,4 @@ end
 function ollama-kill
     pkill ollama
 end
-
-# backups
-function backup --argument filename
-    cp $filename $filename.bak
-end
-
-# curl
-fish_add_path /opt/homebrew/opt/curl/bin
-  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
-  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
 
