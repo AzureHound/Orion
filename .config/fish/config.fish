@@ -25,9 +25,6 @@ atuin init fish | source
 # bat
 set -gx BAT_THEME "base16-256" # base16-256, Dracula
 
-# zoxide
-zoxide init fish | source
-
 # aliasis
 alias cd=z
 alias la='eza -a --icons'
@@ -137,4 +134,7 @@ end
 function ollama-kill
     pkill ollama
 end
+
+# zoxide
+zoxide init fish | source
 
