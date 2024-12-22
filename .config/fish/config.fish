@@ -22,8 +22,18 @@ enable_transience
 
 atuin init fish | source
 
+# backups
+function backup --argument filename
+    cp $filename $filename.bak
+end
+
 # bat
 set -gx BAT_THEME "base16-256" # base16-256, Dracula
+
+# curl
+fish_add_path /opt/homebrew/opt/curl/bin
+  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
+  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
 
 # aliasis
 alias cd=z
@@ -41,16 +51,6 @@ alias bonsai='cbonsai --seed 119 --live'
 alias unimatrix='~/.local/bin/unimatrix'
 alias rain="unimatrix -n -c yellow -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
-
-# backups
-function backup --argument filename
-    cp $filename $filename.bak
-end
-
-# curl
-fish_add_path /opt/homebrew/opt/curl/bin
-  set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
-  set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
 
 # homebrew
 set -x HOMEBREW_NO_ENV_HINTS 1
@@ -112,19 +112,19 @@ export EDITOR=nvim
 #end
 
 # neovide
-function neovide
-    # Set environment variables for Neovide options
-    set -x NEOVIDE_FRAME buttonless
-    set -x NEOVIDE_TITLE_HIDDEN 1
-
-    # Ensure that 'neovide' is available and run it
-    if test -x /opt/homebrew/bin/neovide
-        # Run Neovide with any arguments passed to the function
-        /opt/homebrew/bin/neovide $argv
-    else
-        echo "Error: neovide command not found at /opt/homebrew/bin/neovide."
-    end
-end
+# function neovide
+#     # Set environment variables for Neovide options
+#     set -x NEOVIDE_FRAME buttonless
+#     set -x NEOVIDE_TITLE_HIDDEN 1
+#
+#     # Ensure that 'neovide' is available and run it
+#     if test -x /opt/homebrew/bin/neovide
+#         # Run Neovide with any arguments passed to the function
+#         /opt/homebrew/bin/neovide $argv
+#     else
+#         echo "Error: neovide command not found at /opt/homebrew/bin/neovide."
+#     end
+# end
 
 # ollama
 function ollama-serve
