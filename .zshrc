@@ -1,3 +1,69 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# snippets
+zinit snippet OMZP::sudo
+zinit snippet OMZP::command-not-found
+
+# load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# keybindings
+bindkey -e
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+bindkey '^[w' kill-region
+
+# History
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=1000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+setopt hist_expire_dups_first
+setopt hist_verify
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# fzf integrations
+fcd() {
+  local dir
+  dir=$(find . -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+# Export
+export BAT_THEME="Dracula"
+export EDITOR=nvim
+
 # Starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -7,55 +73,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
 #fi
 
-# History
-HISTFILE=$HOME/.zsh_history
-SAVEHIST=1000
-HISTSIZE=1000
-setopt appendhistory
-setopt share_history
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
-setopt hist_ignore_dups
-setopt hist_expire_dups_first
-setopt hist_verify
-
-# Completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-
-# zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-syntax-highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh-autocomplete
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-#zstyle ':completion:*' menu no
-
-# Set vertical I-beam cursor
+# I-beam cursor
 echo -ne "\e[5 q"
-
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
-export BAT_THEME="Dracula"
-
-# fzf integrations
-fcd() {
-  local dir
-  dir=$(find . -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-# fzf colors
-export FZF_DEFAULT_OPTS="--color=bg+:-1,gutter:-1"
 
 # nvims
 #function nvims() {
@@ -90,13 +109,16 @@ function fzf-nvim {
 # aliasis
 alias la='eza -a --icons'
 alias ls='eza --icons'
-alias ll='eza -l --icons'
+alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias tmux='tmux -f ~/.tmux.conf'
+alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias commits='~/.local/bin/git-commits.sh'
-alias doom='~/.local/bin/doom'
-alias rain='~/.local/bin/unimatrix'
+alias gen='tgpt -i'
 alias clock='tty-clock -sbc'
 alias bonsai='cbonsai --seed 119 --live'
+alias unimatrix='~/.local/bin/unimatrix'
+alias rain="unimatrix -n -c yellow -s 90 -l 'o'"
+alias doom='~/.local/bin/doom'
+
