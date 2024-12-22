@@ -11,13 +11,13 @@ brew analytics off
 rm -rf ~/Library/Application\ Support/Homebrew/analytics
 
 # Install Fonts
-brew install --cask font-jetbrains-mono-nerd-font font-iosevka-nerd-font font-josefin-sans font-comic-mono
+brew install --cask font-jetbrains-mono-nerd-font font-iosevka-nerd-font font-josefin-sans font-comic-mono font-symbols-only-nerd-font
 
 # Homebrew Casks
 brew install --cask iina localsend monitorcontrol obsidian raycasto telegram thunderbird wezterm whatsapp zed zen-browser
 
 # Homebrew Formulae
-brew install aria2 atuin bat btop cbonsai curl duf eza fastfetch ffmpeg figlet fish fzf gcc git git-delta glow grep lazygit lsd mailsy neovide neovim nu nushell ripgrep speedtest-cli starship syncthing telegram tmux warp wget yazi yt-dlp zoxide zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
+brew install aria2 atuin bat btop cbonsai curl duf eza fastfetch fd ffmpeg figlet fish fzf glow gcc git git-delta glow grep imagemagick jq lazygit lsd mailsy neovide neovim nu nushell poppler ripgrep sevenzip speedtest-cli starship syncthing telegram tmux warp wget yazi yt-dlp zoxide
 
 # macOS Cli
 defaults write com.apple.screencapture type jpg
