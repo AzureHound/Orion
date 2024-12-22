@@ -131,4 +131,5 @@ alias bonsai='cbonsai --seed 119 --live'
 alias unimatrix='~/.local/bin/unimatrix'
 alias rain="unimatrix -n -c yellow -s 90 -l 'o'"
 alias doom='~/.local/bin/doom'
+alias weather='curl "wttr.in/Agartala?F"'
 
