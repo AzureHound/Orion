@@ -16,10 +16,6 @@ function starship_transient_rprompt_func
   starship module time
 end
 
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-starship init fish | source
-enable_transience
-
 atuin init fish | source
 
 # backups
@@ -82,6 +78,10 @@ set -xg FZF_DEFAULT_OPTS "--height=90% --layout=reverse --info=inline --border r
 set -xg fzf_preview_dir_cmd eza --long --header --icons --all --color=always --group-directories-first --hyperlink
 set -xg fzf_fd_opts --hidden --color=always
 set -xg _ZO_FZF_OPTS $FZF_DEFAULT_OPTS '--preview "{$fzf_preview_dir_cmd} {2}"'
+
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+starship init fish | source
+enable_transience
 
 # yazi
 function y
