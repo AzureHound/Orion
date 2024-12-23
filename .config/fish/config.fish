@@ -36,7 +36,6 @@ fish_add_path /opt/homebrew/opt/curl/bin
   set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
 
 # aliasis
-alias cd=z
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
@@ -137,5 +136,5 @@ function ollama-kill
 end
 
 # zoxide
-zoxide init fish | source
+zoxide init --cmd cd fish | source
 
