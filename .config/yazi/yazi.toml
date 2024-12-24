@@ -1,3 +1,13 @@
-# yazi.toml
 [manager]
 show_hidden = true
+sort_sensitive = false
+sort_dir_first = true
+linemode = "size"
+show_symlink = true
+
+[preview]
+wrap = "yes"
+
+[input]
+cursor_blink = true
+
