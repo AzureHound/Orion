@@ -17,7 +17,7 @@ brew install --cask font-jetbrains-mono-nerd-font font-iosevka-nerd-font font-jo
 brew install --cask iina keepassxc localsend monitorcontrol obsidian raycast telegram warp wezterm whatsapp zed zen-browser
 
 # Homebrew Formulae
-brew install ani-cli aria2 atuin bash bat btop cbonsai curl duf eza fastfetch fd ffmpeg figlet fish fzf gcc gh git git-delta glow grep imagemagick jq lazygit lsd mailsy neovide neovim nu nushell ollama poppler ripgrep sevenzip speedtest-cli starship syncthing tldr tmux tree-sitter tty-clock wget yazi yt-dlp zoxide
+brew install ani-cli aria2 atuin bash bat btop cbonsai curl duf eza fastfetch fd ffmpeg figlet fish fzf gcc gh git git-delta glow grep imagemagick jq lazygit lsd mailsy neovide neovim nu nushell ollama poppler ripgrep sevenzip speedtest-cli starship syncthing tldr tmux tree-sitter tty-clock rar wget yazi yt-dlp zoxide
 
 # macOS Cli
 defaults write com.apple.screencapture type jpg
