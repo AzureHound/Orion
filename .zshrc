@@ -51,7 +51,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks -
 
 # shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # fzf integrations
@@ -117,8 +116,6 @@ function y() {
 }
 
 # aliasis
-alias cd=z
-alias ci='zi'
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
