@@ -24,7 +24,7 @@ function backup --argument filename
 end
 
 # bat
-set -gx BAT_THEME "base16-256" # base16-256, Dracula
+set -gx BAT_THEME "Dracula" # base16-256, Dracula
 
 # curl
 fish_add_path /opt/homebrew/opt/curl/bin
