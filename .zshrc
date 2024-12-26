@@ -124,6 +124,7 @@ alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias tmux='tmux -f ~/.tmux.conf'
 alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias preview='wezterm imgcat'
 alias gen='tgpt -i'
 alias clock='tty-clock -sbc'
 alias bonsai='cbonsai --seed 119 --live'
