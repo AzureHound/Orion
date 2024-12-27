@@ -33,3 +33,15 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
 ```
 
+---
+
+```shell
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
+```sh
+fisher install catppuccin/fish
+fisher install gazorby/fish-abbreviation-tips
+fisher install nickeb96/puffer-fish
+fisher install jorgebucaran/autopair.fish
+```
