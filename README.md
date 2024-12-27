@@ -41,6 +41,7 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 
 ```sh
 fisher install catppuccin/fish
+fisher install PatrickF1/fzf.fish
 fisher install gazorby/fish-abbreviation-tips
 fisher install nickeb96/puffer-fish
 fisher install jorgebucaran/autopair.fish
