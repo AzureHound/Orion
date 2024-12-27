@@ -1,6 +1,17 @@
+" Add fzf to runtime path (macOS-specific)
 set rtp+=/opt/homebrew/opt/fzf
 
-nnoremap <C-h> <C-w_h
-nnoremap <C-j> <C-w_j
-nnoremap <C-k> <C-w_k
-nnoremap <C-l> <C-w_l
+" Key mappings for window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+call plug#begin()
+
+" Plugins
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+
+call plug#end()
