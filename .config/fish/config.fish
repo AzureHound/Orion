@@ -7,6 +7,10 @@ set -xg XDG_BIN_HOME $HOME/.local/bin
 
 #oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
 
+if not type -q fisher
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source 
+end
+
 # Starship Prompt
 function starship_transient_prompt_func
   starship module character
