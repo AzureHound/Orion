@@ -8,7 +8,6 @@ final_space = true
   background = 'transparent'
 
 [transient_prompt]
-  template = '❯ '
   template = '➜ '
   background = 'transparent'
   foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}green{{end}}']
@@ -19,7 +18,6 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ .Path }}'
     template = '󰀵 {{ .Path }}'
     foreground = 'blue'
     background = 'transparent'
@@ -31,8 +29,6 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-    foreground = 'p:grey'
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'green'
     background = 'transparent'
@@ -40,7 +36,6 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      branch_icon = ''
       branch_icon = ' '
       cache_duration = 'none'
       commit_icon = '@'
@@ -67,7 +62,6 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '❯'
     template = '➜'
     background = 'transparent'
     type = 'text'
