@@ -6,6 +6,9 @@ local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
 config.check_for_updates = false
+config.window_frame = {
+	font = wezterm.font("JetBrainsMono Nerd Font"),
+}
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 18
 --config.line_height = 1.0
