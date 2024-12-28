@@ -1,12 +1,19 @@
-" vim options
+" vim settings
 set wrap
 set ruler
 set number
 set mouse=a
+set showcmd
+set nobackup
 set hlsearch
 set incsearch
 set linebreak
+set ignorecase
+set noswapfile
 set smartindent
+set nocursorline
+set nocursorcolumn
+set encoding=UTF-8
 
 " fzf brew pkg
 set rtp+=/opt/homebrew/opt/fzf
