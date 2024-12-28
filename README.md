@@ -35,14 +35,13 @@ curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash 
 
 ---
 
-```shell
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
 ```sh
-fisher install catppuccin/fish
-fisher install PatrickF1/fzf.fish
-fisher install gazorby/fish-abbreviation-tips
-fisher install nickeb96/puffer-fish
-fisher install jorgebucaran/autopair.fish
+fisher install \
+  jorgebucaran/fisher \
+  patrickf1/fzf.fish \
+  catppuccin/fish \
+  gazorby/fish-abbreviation-tips \
+  nickeb96/puffer-fish \
+  jorgebucaran/autopair.fish \
+  dracula/fish
 ```
