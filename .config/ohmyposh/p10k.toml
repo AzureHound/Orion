@@ -18,7 +18,14 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '󰀵 {{ .Path }}'
+    template = '󰀵 '  # Folder icon alone
+    foreground = 'white'  # Set the folder icon color to white
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .Path }}'
     foreground = 'blue'
     background = 'transparent'
     type = 'path'
