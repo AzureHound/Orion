@@ -11,10 +11,11 @@ config.window_frame = {
 }
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 18
+config.command_palette_font_size = 18
 --config.line_height = 1.0
-config.color_scheme = 'Catppuccin Macchiato'
+config.color_scheme = 'Catppuccin Macchiato' -- Catppuccin Macchiato, Tokyo Night
 config.enable_tab_bar = false
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_and_split_indices_are_zero_based = false
