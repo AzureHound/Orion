@@ -1,3 +1,4 @@
+fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
 # XDG Directories
 set -xg XDG_CONFIG_HOME $HOME/.config
 set -xg XDG_CACHE_HOME $HOME/.cache
