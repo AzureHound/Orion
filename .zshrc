@@ -74,13 +74,13 @@ export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
 
 # Starship
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Ohmyposh
-#if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
-#fi
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
+fi
 
 # I-beam cursor
 echo -ne "\e[5 q"
