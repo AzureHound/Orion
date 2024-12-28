@@ -1,4 +1,5 @@
 fish_config theme choose "Catppuccin Macchiato" # Catppuccin Macchiato, Dracula Official
+
 # XDG Directories
 set -xg XDG_CONFIG_HOME $HOME/.config
 set -xg XDG_CACHE_HOME $HOME/.cache
@@ -6,11 +7,12 @@ set -xg XDG_DATA_HOME $HOME/.local/share
 set -xg XDG_STATE_HOME $HOME/.local/state
 set -xg XDG_BIN_HOME $HOME/.local/bin
 
-#oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
-
+# Fisher
 if not type -q fisher
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source 
 end
+
+#oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
 
 # Starship Prompt
 function starship_transient_prompt_func
