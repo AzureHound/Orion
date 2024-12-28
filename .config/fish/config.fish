@@ -36,6 +36,9 @@ fish_add_path /opt/homebrew/opt/curl/bin
   set -gx LDFLAGS "-L/opt/homebrew/opt/curl/lib"
   set -gx CPPFLAGS "-I/opt/homebrew/opt/curl/include"
 
+# fish
+set -g theme_nerd_fonts yes
+
 # aliasis
 alias la='eza -a --icons'
 alias ls='eza --icons'
