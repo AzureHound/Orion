@@ -21,6 +21,7 @@ brew install ani-cli aria2 atuin asciiquarium bash bat btop cbonsai curl duf eza
 
 # macOS Cli
 defaults write com.apple.screencapture type jpg
+defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 defaults write com.apple.dock autohide-delay -float 0; killall Dock
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
