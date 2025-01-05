@@ -31,7 +31,7 @@ function backup --argument filename
 end
 
 # bat
-set -gx BAT_THEME "Catppuccin Macchiato" # base16-256, Dracula
+set -gx BAT_THEME "Catppuccin Macchiato" # base16-256, Catppuccin Macchiato, Dracula
 
 # curl
 fish_add_path /opt/homebrew/opt/curl/bin
