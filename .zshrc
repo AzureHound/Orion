@@ -8,6 +8,7 @@ export PATH="$HOME/.atuin/bin:$PATH"
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/opt/trash-cli/bin:$PATH"
 
 # zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -141,6 +142,7 @@ alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
+alias rm='trash-put'
 alias tmux='tmux -f ~/.tmux.conf'
 alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
