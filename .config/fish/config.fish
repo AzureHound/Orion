@@ -12,6 +12,8 @@ if not type -q fisher
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source 
 end
 
+set sponge_allow_previously_successful false #sponge fish plugin
+
 #oh-my-posh init fish --config ~/.config/ohmyposh/p10k.toml | source
 
 # Starship Prompt
