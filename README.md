@@ -44,5 +44,6 @@ fisher install \
   gazorby/fish-abbreviation-tips \
   nickeb96/puffer-fish \
   jorgebucaran/autopair.fish \
-  dracula/fish
+  dracula/fish \
+  meaningful-ooo/sponge
 ```
