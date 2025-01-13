@@ -30,7 +30,7 @@ config.show_update_window = false
 config.term = "xterm-256color"
 config.window_decorations = "RESIZE" -- RESIZE, INTEGRATED_BUTTONS|RESIZE, TITLE, NONE
 config.window_background_opacity = 0.60
-config.macos_window_background_blur = 50
+config.macos_window_background_blur = 47
 
 -- Customize the command palette font size and appearance
 config.command_palette_font_size = 12
