@@ -84,10 +84,6 @@ export FZF_DEFAULT_OPTS=" \
 export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
 
-# Starship
-# eval "$(starship init zsh)"
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 # Ohmyposh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
@@ -127,16 +123,12 @@ alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
-alias tmux='tmux -f ~/.tmux.conf'
 alias rg='rg -i'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias commits='~/.local/bin/git-commits.sh'
 alias preview='wezterm imgcat'
 alias gen='tgpt -i'
-alias profile='preview ~/.face.icon'
-alias clock='tty-clock -sbc'
+alias clock='tty-clock -DScC6b'
 alias bonsai='cbonsai --seed 119 --live'
-alias unimatrix='~/.local/bin/unimatrix'
-alias rain="unimatrix -n -c yellow -s 90 -l 'o'"
-alias doom='~/.local/bin/doom'
-alias weather='curl "wttr.in/Agartala?F"'
-
+alias matrix="~/.local/bin/unimatrix -n -c red -s 90 -l 'o'"
+alias weather='curl "v2.wttr.in/Agartala?F"'
