@@ -18,8 +18,8 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '󰀵 '
-    foreground = '#D9D9D9'
+    template = '󰣇 '
+    foreground = '#00B5E2'
     background = 'transparent'
     type = 'text'
     style = 'plain'
@@ -36,7 +36,7 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }} <#FFCC00>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }} <#0DFF82>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = '#0DFF82'
     background = 'transparent'
     type = 'git'
