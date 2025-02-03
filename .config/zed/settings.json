@@ -1,11 +1,58 @@
+// Zed settings
 {
+  // User Interface
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 18,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 18,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Macchiato (Blue Blur+)"
+  },
+
+  // Panels
   "project_panel": {
-    "dock": "left"
+    "default_width": 225,
+    "button": true,
+    "dock": "left",
+    "git_status": true
+  },
+  "notification_panel": {
+    "defauddlt_width": 400,
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "button": false
   },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font",
-    "dock": "bottom"
+    "dock": "bottom",
+    "copy_on_select": true
   },
+
+  // Features
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "position": "right"
+    }
+  },
+
+  //Vim
+  "vim_mode": true,
+
+  // Tweaks
+  "ensure_final_newline_on_save": false,
+  "remove_trailing_whitespace_on_save": false,
+  "tabs": {
+    "show_icons": true,
+    "git_status": true,
+    "close_position": "right"
+  },
+
+  // Assistant
   "assistant": {
     "enabled": false,
     "version": "2",
@@ -14,23 +61,10 @@
   "assistant_v2": {
     "enabled": false
   },
-  "collaboration_panel": {
-    "button": false
-  },
-  "chat_panel": {
-    "button": false
-  },
+
+  // Telemetry
   "telemetry": {
     "diagnostics": false,
     "metrics": false
-  },
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_size": 19,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 19,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blue Blur+)"
   }
 }

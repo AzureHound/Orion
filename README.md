@@ -14,10 +14,13 @@ rm -rf ~/Library/Application\ Support/Homebrew/analytics
 brew install --cask font-jetbrains-mono-nerd-font font-iosevka-nerd-font font-josefin-sans font-comic-mono font-symbols-only-nerd-font
 
 # Homebrew Casks
-brew install --cask iina keepassxc localsend monitorcontrol obsidian raycast rider telegram warp wezterm whatsapp zed zen-browser
+brew install --cask iina keepassxc monitorcontrol obsidian raycast rider telegram warp wezterm whatsapp zed zen-browser
 
 # Homebrew Formulae
 brew install ani-cli aria2 atuin bash bat btop cbonsai curl duf eza fastfetch fd ffmpeg fontconfig freetype fzf gcc gh git git-delta glow grep hugo imagemagick jq lazygit lua mailsy mas neovim node nu nushell oh-my-posh ollama poppler rar ripgrep ruby sevenzip speedtest-cli syncthing tldr tmux tree-sitter unbound utf8proc vim wget yazi yt-dlp zoxide zsh
+
+# Homebrew Taps
+brew install --no-quarantine grishka/grishka/neardrop
 
 # macOS Cli
 defaults write com.apple.screencapture type jpg
@@ -37,13 +40,5 @@ curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash 
 ---
 
 ```sh
-fisher install \
-  jorgebucaran/fisher \
-  patrickf1/fzf.fish \
-  catppuccin/fish \
-  gazorby/fish-abbreviation-tips \
-  nickeb96/puffer-fish \
-  jorgebucaran/autopair.fish \
-  dracula/fish \
-  meaningful-ooo/sponge
+ollama run deepseek-r1:8b
 ```
