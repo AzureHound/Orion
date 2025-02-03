@@ -1,0 +1,13 @@
+.DS_Store
+
+.config/btop/btop.log
+.config/gh
+.config/gh-copilot
+.config/github-copilot
+.config/nushell/history.txt
+.config/nvim
+.config/raycast/extensions
+.config/yazi/flavors
+.config/yazi/package.toml
+.config/yazi/plugins
+.config/zed/prompts/*
