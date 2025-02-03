@@ -11,7 +11,6 @@ fastfetch
 fd
 ffmpeg
 figlet
-fish
 fzf
 gcc
 gh
@@ -24,7 +23,6 @@ imagemagick
 jq
 lazygit
 lolcat
-lsd
 mailsy
 mas
 neovim
@@ -37,9 +35,7 @@ poppler
 ripgrep
 sevenzip
 speedtest-cli
-starship
 syncthing
-television
 tldr
 tmux
 tty-clock

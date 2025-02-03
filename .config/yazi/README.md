@@ -13,3 +13,9 @@ git clone https://github.com/imsi32/yatline.yazi.git ~/.config/yazi/plugins/yatl
 git clone https://github.com/DreamMaoMao/searchjump.yazi.git ~/.config/yazi/plugins/searchjump.yazi
 ```
 
+```
+ya pack -i
+```
+```
+ya pack -u
+```
