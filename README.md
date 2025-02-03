@@ -31,13 +31,15 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool TRUE
 defaults write -g NSWindowShouldDragOnGesture -bool true
 ```
+```
+npm install -g cz-git commitizen
+```
+---
 
 ```sh
 # Install tgpt
 curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
 ```
-
----
 
 ```sh
 ollama run deepseek-r1:8b
