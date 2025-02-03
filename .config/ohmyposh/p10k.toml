@@ -18,8 +18,8 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '󰣇 '
-    foreground = '#00B5E2'
+    template = ' '
+    foreground = '#D9D9D9'
     background = 'transparent'
     type = 'text'
     style = 'plain'
