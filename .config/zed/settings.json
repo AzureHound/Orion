@@ -19,7 +19,7 @@
     "git_status": true
   },
   "notification_panel": {
-    "defauddlt_width": 400,
+    "default_width": 400,
     "dock": "right"
   },
   "collaboration_panel": {
