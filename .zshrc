@@ -63,8 +63,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a -1 --show-symlinks --git-ign
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 
 # shell integrations
-eval "$(fzf --zsh)"
 eval "$(atuin init zsh)"
+eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # fzf integrations
@@ -83,6 +83,8 @@ export FZF_DEFAULT_OPTS=" \
 
 export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
+export VISUAL="$EDITOR"
+export SUDO_EDITOR $EDITOR
 
 # Ohmyposh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -117,6 +119,15 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# ollama
+function ollama-serve {
+    ollama serve > /dev/null 2>&1 &
+}
+
+function ollama-kill {
+    pkill ollama
+}
+
 # aliasis
 alias la='eza -a --icons'
 alias ls='eza --icons'
@@ -126,9 +137,12 @@ alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias rg='rg -i'
 alias commits='~/.local/bin/git-commits.sh'
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias glog='git log --oneline --graph --all'
+
 alias preview='wezterm imgcat'
 alias gen='tgpt -i'
-alias clock='tty-clock -DScC6b'
+
 alias bonsai='cbonsai --seed 119 --live'
+alias clock='tty-clock -DScC6b'
 alias matrix="~/.local/bin/unimatrix -n -c red -s 90 -l 'o'"
 alias weather='curl "v2.wttr.in/Agartala?F"'
