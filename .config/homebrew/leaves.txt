@@ -26,8 +26,6 @@ lolcat
 mailsy
 mas
 neovim
-nu
-nushell
 oh-my-posh
 ollama
 pipx
@@ -38,6 +36,7 @@ speedtest-cli
 syncthing
 tldr
 tmux
+trash-cli
 tty-clock
 utf8proc
 vim

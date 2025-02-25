@@ -74,14 +74,17 @@ fcd() {
 }
 
 # Export
-export FZF_DEFAULT_OPTS=" \
+
+# fzf
+export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --color=selected-bg:#494d64 \
---multi"
+--bind 'ctrl-u:preview-half-page-up'
+--bind 'ctrl-d:preview-half-page-down'
+--bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)'"
 
-export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR $EDITOR
@@ -109,6 +112,15 @@ function fzf-nvim {
     fi
 }
 
+# ollama
+function ollama-serve {
+    ollama serve > /dev/null 2>&1 &
+}
+
+function ollama-kill {
+    pkill ollama
+}
+
 # yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -119,30 +131,27 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# ollama
-function ollama-serve {
-    ollama serve > /dev/null 2>&1 &
-}
-
-function ollama-kill {
-    pkill ollama
-}
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
 
 # aliasis
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
+alias cp='cp -i'
+alias mv='mv -i'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
 alias rg='rg -i'
-alias commits='~/.local/bin/git-commits.sh'
-alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias glog='git log --oneline --graph --all'
-
-alias preview='wezterm imgcat'
-alias gen='tgpt -i'
 
 alias bonsai='cbonsai --seed 119 --live'
 alias clock='tty-clock -DScC6b'
 alias matrix="~/.local/bin/unimatrix -n -c red -s 90 -l 'o'"
 alias weather='curl "v2.wttr.in/Agartala?F"'
+
+alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
+alias commits='~/.local/bin/commits'
+alias glog='git log --oneline --graph --all'
+
+alias preview='wezterm imgcat'

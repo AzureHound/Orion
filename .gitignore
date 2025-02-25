@@ -5,7 +5,7 @@
 .config/gh-copilot
 .config/github-copilot
 .config/nushell/history.txt
-.config/nvim
+.config/nvim/lazy-lock.json
 .config/raycast/extensions
 .config/tmux/plugins
 .config/yazi/flavors
