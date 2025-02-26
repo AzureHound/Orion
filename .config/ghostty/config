@@ -7,13 +7,17 @@ window-decoration = true
 window-padding-x = 8
 window-padding-y = 8
 background-opacity = 0.84
-background-blur-radius = 16
+background-blur-radius = 20
 window-width = 164
 window-height = 100
 
 bold-is-bright = true
 cursor-style = bar
+cursor-style-blink = true
+adjust-cursor-thickness = 140%
 mouse-hide-while-typing = true
+macos-option-as-alt = true
+confirm-close-surface = false
 # window-save-state = always
 
 auto-update = off
@@ -32,7 +36,7 @@ clipboard-write = "allow"
 clipboard-trim-trailing-spaces = true
 
 ## theme
-theme = catppuccin-macchiato.conf
+theme = catppuccin-macchiato
 
 ## keybindings
 config-file = keybinds
