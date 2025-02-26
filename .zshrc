@@ -62,6 +62,14 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a -1 --show-symlinks --git-ignore --icons --color=always $realpath'
 
+zshaddhistory() {
+  local j=1
+  while ([[ ${${(z)1}[$j]} == *=* ]]) {
+    ((j++))
+  }
+  whence ${${(z)1}[$j]} >| /dev/null || return 1
+}
+
 # shell integrations
 eval "$(atuin init zsh)"
 eval "$(fzf --zsh)"
@@ -73,8 +81,6 @@ fcd() {
   dir=$(find . -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
-# Export
-
 # fzf
 export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border rounded --pointer='' --margin=1 --padding=1 \
 --color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
@@ -85,6 +91,7 @@ export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border ro
 --bind 'ctrl-d:preview-half-page-down'
 --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)'"
 
+# Export
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR $EDITOR
@@ -147,11 +154,12 @@ alias rg='rg -i'
 
 alias bonsai='cbonsai --seed 119 --live'
 alias clock='tty-clock -DScC6b'
+alias gen='tgpt -i'
 alias matrix="~/.local/bin/unimatrix -n -c red -s 90 -l 'o'"
+alias preview='chafa -f kitty'
 alias weather='curl "v2.wttr.in/Agartala?F"'
 
 alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 alias commits='~/.local/bin/commits'
 alias glog='git log --oneline --graph --all'
-
-alias preview='wezterm imgcat'
+alias tmux='~/.local/bin/session'

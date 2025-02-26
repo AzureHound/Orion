@@ -1,42 +1,41 @@
-# https://ghostty.org/docs/config/reference
-
 ## UI / window
-macos-titlebar-style = hidden
-macos-window-shadow = false
-window-decoration = true
-window-padding-x = 8
-window-padding-y = 8
-background-opacity = 0.84
-background-blur-radius = 20
 window-width = 164
 window-height = 100
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = true
+background-opacity = 0.84
+background-blur-radius = 20
+macos-window-shadow = false
+macos-titlebar-style = hidden
 
-bold-is-bright = true
-cursor-style = bar
-cursor-style-blink = true
-adjust-cursor-thickness = 140%
-mouse-hide-while-typing = true
-macos-option-as-alt = true
-confirm-close-surface = false
-# window-save-state = always
-
-auto-update = off
-shell-integration = zsh
-quit-after-last-window-closed = true
+## theme
+theme = catppuccin-macchiato
 
 ## font
 font-family = "JetBrainsMono Nerd Font"
 font-feature = -liga
 font-feature = -dlig
 font-size = 19
+bold-is-bright = true
 
 ## clipboard
 clipboard-read = "allow"
 clipboard-write = "allow"
 clipboard-trim-trailing-spaces = true
 
-## theme
-theme = catppuccin-macchiato
+## Options
+cursor-style = bar
+cursor-style-blink = true
+adjust-cursor-thickness = 140%
+mouse-hide-while-typing = true
+
+auto-update = off
+shell-integration = zsh
+macos-option-as-alt = true
+# window-save-state = always
+confirm-close-surface = false
+quit-after-last-window-closed = true
 
 ## keybindings
 config-file = keybinds
