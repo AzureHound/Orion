@@ -74,3 +74,4 @@ function! NerdTreeToggleFind()
 endfunction
 
 nnoremap <C-n> :call NerdTreeToggleFind()<CR>
+autocmd BufEnter * if (winnr("$") == 1 && exists("g:NERDTree") && g:NERDTree.IsOpen()) | quit | endif
