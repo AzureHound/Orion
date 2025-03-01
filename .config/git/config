@@ -2,8 +2,8 @@
   path = ~/.config/git/themes/catppuccin.gitconfig
 
 [user]
-  name = Wolf
-  email = 183492338+AzureHound@users.noreply.github.com
+	name = Wolf
+	email = 183492338+AzureHound@users.noreply.github.com
 
 [safe]
   directory = ~/Developer
@@ -31,4 +31,4 @@
     conflictstyle = zdiff3
 
 [pull]
-  rebase = false
+  rebase = true

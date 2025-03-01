@@ -1,2 +1,2 @@
-
-. "$HOME/.atuin/bin/env"
+#!/usr/bin/env bash
+. $HOME/.bashrc

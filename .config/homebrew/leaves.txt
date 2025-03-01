@@ -3,6 +3,8 @@ bash
 bat
 btop
 cbonsai
+chafa
+coreutils
 cowsay
 curl
 duf
@@ -40,6 +42,7 @@ trash-cli
 tty-clock
 utf8proc
 vim
+vivid
 wget
 yazi
 yt-dlp

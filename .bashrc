@@ -1,3 +1,3 @@
-
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+#!/usr/bin/env bash
+BASH_HOME="${BASH_HOME:-$HOME/.config/bash}"
+. $BASH_HOME/.bashrc
