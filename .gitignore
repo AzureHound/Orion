@@ -1,5 +1,6 @@
 .DS_Store
 
+.config/atuin/atuin-receipt.json
 .config/btop/btop.log
 .config/gh
 .config/gh-copilot
@@ -12,3 +13,4 @@
 .config/yazi/package.toml
 .config/yazi/plugins
 .config/zed/prompts/*
+.config/zsh/*
