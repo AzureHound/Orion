@@ -99,3 +99,4 @@ bindkey '^[w' kill-region
 eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
+eval "$(tv init zsh)"
