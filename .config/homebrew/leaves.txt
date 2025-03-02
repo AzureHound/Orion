@@ -19,6 +19,7 @@ gh
 git
 git-delta
 glow
+gnu-sed
 grep
 hugo
 imagemagick
@@ -36,6 +37,7 @@ ripgrep
 sevenzip
 speedtest-cli
 syncthing
+television
 tldr
 tmux
 trash-cli
