@@ -46,3 +46,6 @@ export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border ro
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Sed
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
