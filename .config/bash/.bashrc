@@ -3,7 +3,7 @@ BASH_HOME=~/.config/bash
 export HISTFILE=$XDG_CACHE_HOME/bash_history
 
 # Source
-source $BASH_HOME/aliases
+source $BASH_HOME/.bash_aliases
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
