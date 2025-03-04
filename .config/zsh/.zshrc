@@ -2,6 +2,10 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/opt/trash-cli/bin:$PATH"
 
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
+
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -102,4 +106,4 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 # eval "$(tv init zsh)"
 
-colorscript
+# colorscript
