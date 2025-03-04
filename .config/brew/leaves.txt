@@ -1,4 +1,5 @@
 aria2
+arl/arl/gitmux
 bash
 bat
 btop
@@ -26,11 +27,13 @@ imagemagick
 jq
 lazygit
 lolcat
+lsd
 mailsy
 mas
 neovim
 oh-my-posh
 ollama
+onefetch
 pipx
 poppler
 ripgrep
