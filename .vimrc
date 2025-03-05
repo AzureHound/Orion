@@ -44,6 +44,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
+set rtp+=/opt/homebrew/opt/fzf
+
 let mapleader = " "
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-Q> :Rg<Cr>
