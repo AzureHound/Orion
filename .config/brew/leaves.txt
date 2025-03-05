@@ -39,6 +39,7 @@ poppler
 ripgrep
 sevenzip
 speedtest-cli
+spicetify-cli
 syncthing
 television
 tldr
