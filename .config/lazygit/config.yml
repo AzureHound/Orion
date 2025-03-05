@@ -1,3 +1,7 @@
+startuppopupversion: 0
+notARepository: 'skip'
+recentrepos:
+- repo
 gui:
  # Use the mocha catppuccin theme
  theme:
