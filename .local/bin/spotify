@@ -20,7 +20,7 @@ validate_spotify_url() {
 }
 
 # Create error logs directory in home
-LOGS_DIR="$HOME/.spotdl_logs"
+LOGS_DIR="/tmp"
 mkdir -p "$LOGS_DIR"
 
 # Main prompt
@@ -37,7 +37,7 @@ fi
 echo "Downloading from: $spotify_url"
 
 # The command is now constructed exactly like the working version you provided
-command="$SPOTDL_PATH download \"$spotify_url\" --scan-for-songs --overwrite skip --threads 3 --print-errors --save-errors \"$LOGS_DIR/spotdl_errors_$(date +%Y%m%d_%H%M%S).txt\""
+command="$SPOTDL_PATH download \"$spotify_url\" --scan-for-songs --overwrite skip --threads 3 --bitrate 320k --print-errors --save-errors \"$LOGS_DIR/spotdl_errors_$(date +%Y%m%d_%H%M%S).txt\""
 
 echo "Executing command: $command"
 eval "$command"
