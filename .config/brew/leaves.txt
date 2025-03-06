@@ -22,6 +22,7 @@ git-delta
 glow
 gnu-sed
 grep
+htop
 hugo
 imagemagick
 jq

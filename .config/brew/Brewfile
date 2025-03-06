@@ -26,6 +26,7 @@ brew "git-delta"
 brew "glow"
 brew "gnu-sed"
 brew "grep"
+brew "htop"
 brew "hugo"
 brew "imagemagick"
 brew "jq"
@@ -78,5 +79,6 @@ cask "whatsapp"
 cask "zed"
 cask "zen-browser"
 mas "AdGuard for Safari", id: 1440147259
+mas "Encrypto", id: 935235287
 mas "Night Eye", id: 1450504903
-mas "Super Agent", id: 1568262835
+mas "superagent", id: 1568262835
