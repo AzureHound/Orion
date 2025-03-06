@@ -43,6 +43,10 @@ export FZF_DEFAULT_OPTS="--height=90% --layout=reverse --info=inline --border ro
 --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
 --multi"
 
+# Tmux_FZF
+export FZF_CTRL_R_OPTS="--reverse"
+export FZF_TMUX_OPTS="-p"
+
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
