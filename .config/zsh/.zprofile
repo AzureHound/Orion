@@ -51,5 +51,8 @@ export FZF_TMUX_OPTS="-p"
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 
+# pipx
+export PATH="$PATH:/Users/eyes/Developer/repos/Orion/.local/bin"
+
 # Sed
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"

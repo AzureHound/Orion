@@ -11,21 +11,10 @@ alias rg='rg -i'
 alias bonsai='cbonsai --seed 119 --live'
 alias clock='tty-clock -DScC6b'
 alias gen='tgpt -i'
-alias matrix="~/.local/bin/unimatrix -n -c red -s 90 -l 'o'"
+alias matrix="unimatrix -n -c red -s 90 -l 'o'"
 alias preview='chafa -f kitty'
 alias weather='curl "v2.wttr.in/Agartala?F"'
 
 alias branches='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias commits='~/.local/bin/commits'
-alias checkout='~/.local/bin/checkout'
 alias glog='git log --oneline --graph --all'
-alias session='~/.local/bin/session'
-alias dev='~/.local/bin/dev'
 alias lg='lazygit'
-
-alias ani-down='~/.local/bin/ani-down'
-alias colorscript='~/.local/bin/colorscript -r'
-alias emoji='~/.local/bin/emojifzf'
-alias gitignore='~/.local/bin/gitignore'
-alias ignore='~/.local/bin/ignore'
-alias Notes='~/.local/bin/notes'
