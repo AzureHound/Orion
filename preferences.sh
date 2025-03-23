@@ -41,6 +41,9 @@ defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
 # Disable automatic capitalization
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
+# Move windows by holding ctrl+cmd and dragging any part of the window
+defaults write -g NSWindowShouldDragOnGesture -bool true # 
+
 # Application Settings
 
 ## Finder
