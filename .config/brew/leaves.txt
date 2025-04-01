@@ -3,6 +3,7 @@ arl/arl/gitmux
 bash
 bat
 btop
+carapace
 cbonsai
 chafa
 coreutils
@@ -27,11 +28,15 @@ hugo
 imagemagick
 jq
 lazygit
+libvterm
 lolcat
 lsd
+luarocks
 mailsy
 mas
+msgpack
 neovim
+nushell
 oh-my-posh
 ollama
 onefetch
