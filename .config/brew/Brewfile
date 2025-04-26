@@ -50,12 +50,14 @@ brew "ripgrep"
 brew "sevenzip"
 brew "speedtest-cli"
 brew "spicetify-cli"
+brew "superfile"
 brew "syncthing", restart_service: :changed
 brew "television"
 brew "tldr"
 brew "tmux"
 brew "trash-cli"
 brew "tty-clock"
+brew "uv"
 brew "vim"
 brew "vivid"
 brew "wget"
@@ -69,6 +71,7 @@ cask "font-josefin-sans"
 cask "font-symbols-only-nerd-font"
 cask "ghostty"
 cask "iina"
+cask "imageoptim"
 cask "karabiner-elements"
 cask "keepassxc"
 cask "monitorcontrol"
@@ -89,4 +92,4 @@ mas "Keynote", id: 409183694
 mas "Night Eye", id: 1450504903
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "superagent", id: 1568262835
+mas "Super Agent", id: 1568262835
