@@ -110,4 +110,13 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 # eval "$(tv init zsh)"
 
+# Curl
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
+
+# gnubin
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
 # colorscript
