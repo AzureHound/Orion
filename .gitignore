@@ -5,6 +5,7 @@
 .config/gh
 .config/gh-copilot
 .config/github-copilot
+.config/jelly
 .config/nushell
 .config/nvim/lazy-lock.json
 .config/raycast/extensions
