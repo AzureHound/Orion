@@ -3,8 +3,11 @@
 # Config file path
 CONFIG_FILE="$HOME/.config/jelly/config"
 
+# Determine the default media player based on the operating system
+DEFAULT_MEDIA_PLAYER=$([[ "$OSTYPE" == "darwin"* ]] && echo "iina" || echo "mpv")
+
 # Ensure required commands are available
-for cmd in curl jq fzf iina; do
+for cmd in curl jq fzf; do
   if ! command -v "$cmd" &>/dev/null; then
     echo -e "\033[31mError:\033[0m '$cmd' is required but not installed."
     exit 1
@@ -19,13 +22,23 @@ if [ ! -f "$CONFIG_FILE" ]; then
 # Jelly Config
 server=http://your-jellyfin-server:8096
 api_key=your_api_key
+player=$DEFAULT_MEDIA_PLAYER
 EOL
-  echo "Update it with your Server URL & API key."
+  echo "Update it with your Server URL, API key."
   exit 1
 fi
 
 # Source the config file
 source "$CONFIG_FILE"
+
+# Set media player from config or use default
+MEDIA_PLAYER=${player:-$DEFAULT_MEDIA_PLAYER}
+
+# Ensure the selected media player is installed
+if ! command -v "$MEDIA_PLAYER" &>/dev/null; then
+  echo -e "\033[31mError:\033[0m '$MEDIA_PLAYER' is required but not installed."
+  exit 1
+fi
 
 # Check required parameters
 if [ -z "$server" ] || [ -z "$api_key" ]; then
@@ -82,8 +95,12 @@ play_media() {
   local name=$2
   local playback_url="$server/Videos/$id/stream.mp4?X-Emby-Token=$api_key"
 
-  # Redirect IINA output to /dev/null to suppress terminal printouts
-  iina "$playback_url" --force-media-title="$name" >/dev/null 2>&1
+  # Redirect media player output to /dev/null to suppress terminal printouts
+  if [[ "$MEDIA_PLAYER" == "iina" ]]; then
+    open -a IINA "$playback_url" --args --force-media-title="$name" >/dev/null 2>&1
+  else
+    mpv "$playback_url" --force-media-title="$name" >/dev/null 2>&1
+  fi
 }
 
 # Main script
