@@ -83,13 +83,13 @@ cask "raycast"
 cask "spotify"
 cask "telegram"
 cask "upscayl"
+cask "wezterm"
 cask "whatsapp"
 cask "zed"
 cask "zen-browser"
 mas "AdGuard for Safari", id: 1440147259
 mas "Encrypto", id: 935235287
 mas "Keynote", id: 409183694
-mas "Night Eye", id: 1450504903
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Super Agent", id: 1568262835
