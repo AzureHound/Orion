@@ -1,4 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export TERM=xterm-256color
 
 # XDG Directories
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -26,6 +27,7 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 export SUDO_EDITOR="vim"
 
+# Ls
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 
 # FZF
