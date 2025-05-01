@@ -1,11 +1,12 @@
 ## UI / window
-window-width = 164
-window-height = 100
-window-padding-x = 8
-window-padding-y = 8
+window-width = 174
+window-height = 110
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
 window-decoration = true
-background-opacity = 0.8
-background-blur-radius = 40
+# background-opacity = 0.8
+# background-blur-radius = 40
 macos-window-shadow = false
 macos-titlebar-style = hidden
 
@@ -13,11 +14,10 @@ macos-titlebar-style = hidden
 theme = catppuccin-macchiato
 
 ## font
-font-family = "JetBrainsMono Nerd Font"
 font-feature = -liga
 font-feature = -dlig
-font-size = 19
-bold-is-bright = true
+font-size = 18
+bold-is-bright = false
 
 ## clipboard
 clipboard-read = "allow"
