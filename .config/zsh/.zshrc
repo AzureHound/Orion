@@ -22,6 +22,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light catppuccin/zsh-syntax-highlighting
 zinit light djui/alias-tips
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 # Snippets
 zinit snippet OMZP::sudo
