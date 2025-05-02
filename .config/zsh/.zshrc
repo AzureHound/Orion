@@ -75,6 +75,7 @@ setopt interactive_comments
 setopt no_case_glob no_case_match
 setopt globdots
 setopt extended_glob
+unsetopt prompt_sp
 
 # Ohmyposh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
