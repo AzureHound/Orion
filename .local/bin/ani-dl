@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+
+# FZF_OPTS_OVERRIDE
+export FZF_DEFAULT_OPTS="--height=40% --info=right --border rounded --pointer='' --margin=1 --padding=1 \
+--color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=selected-bg:#494d64 \
+--bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
+--multi --prompt '󰥨 Search: '"
+
+# Variables
+base_directory="$HOME/Videos/Anime"
+
+# Function to display a menu and get the user's choice using fzf
+function show_menu() {
+  choice=$(echo -e "Seasons\nEpisodes" | fzf)
+  return $? # Return fzf's exit code
+}
+
+# Function to clean up .vtt files
+function cleanup_vtt_files() {
+  local directory="$1"
+
+  # Check if directory exists before attempting to clean
+  if [ -d "$directory" ]; then
+    echo "Removing subtitle (.vtt) files from $directory..."
+    find "$directory" -type f -name "*.vtt" -delete
+    echo "Subtitle cleanup complete."
+  else
+    echo "Directory $directory does not exist. Skipping subtitle cleanup."
+  fi
+}
+
+# Function to download seasons or episodes
+function download_content() {
+  # Prompt for anime name
+  read -p "Enter Anime Name: " anime_name
+
+  # Ensure the base download directory exists
+  if [ ! -d "$base_directory" ]; then
+    echo "Creating base directory $base_directory."
+    mkdir -p "$base_directory"
+  fi
+
+  case $choice in
+  "Seasons")
+    echo "Starting Seasons download..."
+    season_directory="$base_directory/$anime_name"
+    if [ ! -d "$season_directory" ]; then
+      echo "Creating directory $season_directory."
+      mkdir -p "$season_directory"
+    fi
+    cd "$season_directory" || exit
+    last_episode=100
+    ani-cli "$anime_name" -d -e 1-"$last_episode"
+    # NOW clean up .vtt files after download - using the current directory
+    cleanup_vtt_files "$(pwd)"
+    ;;
+  "Episodes")
+    echo "Starting Episodes download..."
+    episode_directory="$base_directory/$anime_name"
+    if [ ! -d "$episode_directory" ]; then
+      echo "Creating directory $episode_directory."
+      mkdir -p "$episode_directory"
+    fi
+    cd "$episode_directory" || exit
+    ani-cli -d "$anime_name"
+    # NOW clean up .vtt files after download - using the current directory
+    cleanup_vtt_files "$(pwd)"
+    ;;
+  *)
+    echo "Invalid choice. Please select a valid option."
+    ;;
+  esac
+}
+
+# Display the menu and get the user's choice
+while true; do
+  show_menu
+  menu_status=$? # Capture the exit status of show_menu
+
+  # Check if user cancelled with ESC
+  if [ $menu_status -ne 0 ]; then
+    echo "Exited ..."
+    exit 0
+  fi
+
+  # Continue only if a valid selection was made
+  if [ -n "$choice" ]; then
+    download_content
+  else
+    echo "No selection made. Please try again."
+    continue
+  fi
+  break
+done
