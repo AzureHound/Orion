@@ -13,5 +13,7 @@
 .config/yazi/flavors
 .config/yazi/package.toml
 .config/yazi/plugins
-.config/zed/prompts/*
+.config/zed/*
 .config/zsh/*
+
+.local/bin/spotdl

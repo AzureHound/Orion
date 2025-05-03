@@ -1,6 +1,7 @@
 // Zed settings
 {
   // User Interface
+  "icon_theme": "Catppuccin Macchiato",
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 20,
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -21,7 +22,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Espresso (Blur)"
+    "dark": "Catppuccin Macchiato (Blue Blur+)"
   },
 
   // Panels
