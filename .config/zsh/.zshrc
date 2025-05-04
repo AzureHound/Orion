@@ -81,7 +81,7 @@ unsetopt prompt_sp
 
 # Ohmyposh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
- eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.toml)"
+ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
 fi
 
 # I-beam cursor
