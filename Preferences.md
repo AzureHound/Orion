@@ -1,10 +1,11 @@
+## Init
+
 ```sh
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ```sh
-# Init
 touch ~/.hushlogin
 
 brew analytics off
