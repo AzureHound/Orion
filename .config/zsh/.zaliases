@@ -31,7 +31,7 @@ alias sysupgrade='brew update && \
 brew upgrade && \
 brew autoremove && \
 brew cleanup && \
-brew bundle dump --force --file=~/Brewfile && \
+brew bundle dump --force --file=~/.config/brew/Brewfile && \
 zinit self-update && \
 zinit update && \
 ya pack -u'

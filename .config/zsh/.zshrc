@@ -80,12 +80,16 @@ setopt extended_glob
 unsetopt prompt_sp
 
 # Ohmyposh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
- eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
-fi
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
+# fi
 
 # I-beam cursor
 echo -ne "\e[5 q"
+precmd() {
+    echo -ne "\e[6 q"  # nvim exit I-beam cursor
+}
 
 # Ollama
 function ollama-serve {
@@ -127,4 +131,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
+"session"
 # colorscript

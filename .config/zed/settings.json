@@ -49,7 +49,7 @@
     "copy_on_select": true,
     "shell": {
       "with_arguments": {
-        "program": "/sbin/zsh",
+        "program": "/bin/zsh",
         "args": ["--login"]
       }
     }

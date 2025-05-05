@@ -14,6 +14,7 @@ macos-titlebar-style = hidden
 theme = catppuccin-macchiato
 
 ## font
+font-family = JetBrainsMono Nerd Font
 font-feature = -liga
 font-feature = -dlig
 font-size = 18
@@ -39,3 +40,6 @@ quit-after-last-window-closed = true
 
 ## keybindings
 config-file = keybinds
+
+## Icon
+macos-icon = blueprint
