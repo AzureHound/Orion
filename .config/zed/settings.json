@@ -4,24 +4,37 @@
   "icon_theme": "Catppuccin Macchiato",
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 20,
+  "cursor_blink": true,
+  "hide_mouse": "on_typing_and_movement",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "show_user_picture": false,
   "buffer_font_size": 16.0,
+  "show_user_picture": false,
   "relative_line_numbers": false,
   "current_line_highlight": "none",
   "toolbar": {
     "breadcrumbs": false,
-    "quick_actions": false
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
   },
   "tab_bar": {
     "show": false
   },
+  "preview_tabs": {
+    "enabled": false
+  },
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Catppuccin Mocha (Blue Blur+)",
     "dark": "Catppuccin Macchiato (Blue Blur+)"
   },
 
@@ -65,7 +78,7 @@
   },
 
   //Vim
-  "vim_mode": false,
+  "vim_mode": true,
 
   // Tweaks
   "format_on_save": "on",
