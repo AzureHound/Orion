@@ -27,12 +27,26 @@
   line-numbers = true
   line-numbers-right-format = "│ "
 
-[merge]
-    conflictstyle = zdiff3
+[push]
+  default = current
 
 [pull]
   rebase = true
+  default = current
+
+[merge]
+    conflictstyle = zdiff3
+
+[rebase]
+  autoStash = true
 
 [color "diff"]
   old = red strike
   new = green italic
+
+[color "branch"]
+  current = yellow reverse
+  remote = cyan
+  local = magenta
+  upstream = cyan
+  plain = white
