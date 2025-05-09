@@ -52,8 +52,8 @@
       "newline": true,
       "segments": [
         {
-          "template": "󰣇 ",
-          "foreground": "p:blue",
+          "template": " ",
+          "foreground": "p:overlay1",
           "background": "transparent",
           "type": "text",
           "style": "plain"
