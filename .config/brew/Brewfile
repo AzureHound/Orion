@@ -1,5 +1,6 @@
 tap "arl/arl"
 tap "grishka/grishka"
+tap "josephburgess/formulae"
 tap "nikitabobko/tap"
 brew "aria2"
 brew "atuin", restart_service: :changed
@@ -54,7 +55,6 @@ brew "television"
 brew "tldr"
 brew "tmux"
 brew "trash-cli"
-brew "tty-clock"
 brew "uv"
 brew "vim"
 brew "vivid"
@@ -64,6 +64,7 @@ brew "yt-dlp"
 brew "zoxide"
 brew "zsh"
 brew "arl/arl/gitmux"
+brew "josephburgess/formulae/gust"
 cask "font-comic-mono"
 cask "font-iosevka-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
@@ -73,7 +74,9 @@ cask "ghostty"
 cask "iina"
 cask "imageoptim"
 cask "keepassxc"
+cask "macdroid"
 cask "monitorcontrol"
+cask "mos"
 cask "notion"
 cask "obsidian"
 cask "rar"
@@ -83,11 +86,12 @@ cask "telegram"
 cask "upscayl"
 cask "whatsapp"
 cask "zed"
-cask "zen-browser"
+cask "zen"
 mas "AdGuard for Safari", id: 1440147259
 mas "Dropover", id: 1355679052
 mas "Encrypto", id: 935235287
 mas "Hidden Bar", id: 1452453066
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
