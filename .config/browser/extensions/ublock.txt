@@ -1,52 +1,117 @@
-{
-  "timeStamp": 1745953252198,
-  "version": "1.63.2",
-  "userSettings": {
-    "uiAccentCustom": true,
-    "uiTheme": "dark",
-    "importedLists": []
-  },
-  "selectedFilterLists": [
-    "user-filters",
-    "ublock-filters",
-    "ublock-badware",
-    "ublock-privacy",
-    "ublock-quick-fixes",
-    "ublock-unbreak",
-    "easylist",
-    "adguard-generic",
-    "adguard-mobile",
-    "easyprivacy",
-    "adguard-spyware",
-    "adguard-spyware-url",
-    "block-lan",
-    "urlhaus-1",
-    "curben-phishing",
-    "plowe-0",
-    "dpollock-0",
-    "fanboy-cookiemonster",
-    "ublock-cookies-easylist",
-    "adguard-cookies",
-    "ublock-cookies-adguard",
-    "fanboy-social",
-    "adguard-social",
-    "easylist-chat",
-    "easylist-newsletters",
-    "easylist-notifications",
-    "easylist-annoyances",
-    "adguard-mobile-app-banners",
-    "adguard-other-annoyances",
-    "adguard-popup-overlays",
-    "adguard-widgets",
-    "ublock-annoyances"
-  ],
-  "hiddenSettings": {},
-  "whitelist": [
-    "chrome-extension-scheme",
-    "moz-extension-scheme"
-  ],
-  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop",
-  "urlFilteringString": "",
-  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true",
-  "userFilters": "! Title: Hide YouTube Shorts\n! Description: Hide all traces of YouTube shorts videos on YouTube\n! Version: 1.8.0\n! Last modified: 2023-01-08 20:02\n! Expires: 2 weeks (update frequency)\n! Homepage: https://github.com/gijsdev/ublock-hide-yt-shorts\n! License: https://github.com/gijsdev/ublock-hide-yt-shorts/blob/master/LICENSE.md\n\n! Hide all videos containing the phrase \"#shorts\"\nyoutube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))\nyoutube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))\nyoutube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))\nyoutube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))\n\n! Hide all videos with the shorts indicator on the thumbnail\nyoutube.com##ytd-grid-video-renderer:has([overlay-style=\"SHORTS\"])\nyoutube.com##ytd-rich-item-renderer:has([overlay-style=\"SHORTS\"])\nyoutube.com##ytd-video-renderer:has([overlay-style=\"SHORTS\"])\nyoutube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype=\"subscriptions\"]:has(ytd-video-renderer:has([overlay-style=\"SHORTS\"]))\n\n! Hide shorts button in sidebar\nyoutube.com##ytd-guide-entry-renderer:has-text(Shorts)\nyoutube.com##ytd-mini-guide-entry-renderer:has-text(Shorts)\n\n! Hide shorts section on homepage\nyoutube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))\nyoutube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))\n\n! Hide shorts tab on channel pages\n! Old style\nyoutube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))\n! New style (2023-10)\nyoutube.com##yt-tab-shape:has-text(/^Shorts$/)\n\n! Hide shorts in video descriptions\nyoutube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text(\"Shorts remixing this video\")\n\n! Remove empty spaces in grid\nyoutube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)\n\n\n!!! MOBILE !!!\n\n! Hide all videos in home feed containing the phrase \"#shorts\"\nm.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#shorts))\nm.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Shorts))\nm.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#short))\nm.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Short))\n\n! Hide all videos in subscription feed containing the phrase \"#shorts\"\nm.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#shorts))\nm.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Shorts))\nm.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#short))\nm.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Short))\n\n! Hide shorts button in the bottom navigation bar\nm.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)\n\n! Hide all videos with the shorts indicator on the thumbnail\nm.youtube.com##ytm-video-with-context-renderer:has([data-style=\"SHORTS\"])\n\n! Hide shorts sections\nm.youtube.com##ytm-rich-section-renderer:has(ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper:has-text(Shorts)))\nm.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper:has-text(Shorts))\n\n! Hide shorts tab on channel pages\nm.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)\n\n! Title:  YouTube-Cosmetic-Filters-for-uBlock-Origin - Search results only\n! Description: Cosmetic filters to improve the search results.\n! Home: https://github.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin\n\n! Search Results\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/For you/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/People also watched/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Previously watched/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related to your search/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related Movies/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/New for you/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Channels new to you/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related chapters/i))\nwww.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Explore more/i))\nwww.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Latest from/i))\nwww.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Results for similar searches/i))\nwww.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has-text(/From related searches/i)\nwww.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/People also search for/i)\nwww.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/Searches related to/i)\nwww.youtube.com##ytd-movie-renderer.ytd-item-section-renderer.style-scope\nwww.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope\nwww.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has-text(/Latest Posts From/i)\nwww.youtube.com###about-these-results\nwww.youtube.com##ytd-emergency-onebox-renderer.ytd-item-section-renderer.style-scope > .ytd-emergency-onebox-renderer.style-scope\nwww.youtube.com##.ytd-item-section-renderer.style-scope > .ytd-ad-slot-renderer.style-scope\n\n! Title:  YouTube-Cosmetic-Filters-for-uBlock-Origin - Landing page only\n! Description: Cosmetic filters to improve the home section.\n! Home: https://github.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin\n\n! Home\nwww.youtube.com##contents.ytd-shelf-renderer.style-scope:has-text(/People also watched/i)\nwww.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Watch again/i))\nwww.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/People also watched/i)\nwww.youtube.com###content > .ytd-rich-section-renderer.style-scope\nwww.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-row.style-scope > #star-survey\nwww.youtube.com###merch-shelf > .ytd-watch-flexy.style-scope\nwww.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-row.style-scope > .ytd-feed-nudge-renderer.style-scope\nwww.youtube.com##ytd-rich-item-renderer.style-scope > .ytd-feed-nudge-renderer.style-scope\nwww.youtube.com##.ytd-rich-item-renderer.style-scope > .ytd-feed-nudge-renderer.style-scope\nwww.youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope\n! Reduce empty slots in grid\nyoutube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)\n\n! Keyword Bar (removes \"sort by\" on video page)\nwww.youtube.com###scroll-container > .ytd-feed-filter-chip-bar-renderer.style-scope\nwww.youtube.com###header > .ytd-rich-grid-renderer.style-scope\n! Voice Search Button\nwww.youtube.com###voice-search-button"
-}
+! Title: Hide YouTube Shorts
+! Description: Hide all traces of YouTube shorts videos on YouTube
+! Version: 1.8.0
+! Last modified: 2023-01-08 20:02
+! Expires: 2 weeks (update frequency)
+! Homepage: https://github.com/gijsdev/ublock-hide-yt-shorts
+! License: https://github.com/gijsdev/ublock-hide-yt-shorts/blob/master/LICENSE.md
+
+! Hide all videos containing the phrase "#shorts"
+youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
+youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
+youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
+youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))
+
+! Hide all videos with the shorts indicator on the thumbnail
+youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
+
+! Hide shorts section on homepage
+youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
+youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
+
+! Hide shorts button in sidebar
+youtube.com##ytd-guide-entry-renderer:has-text(Shorts)
+youtube.com##ytd-mini-guide-entry-renderer:has-text(Shorts)
+
+! Hide shorts tab on channel pages
+! Old style
+youtube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))
+! New style (2023-10)
+youtube.com##yt-tab-shape:has-text(/^Shorts$/)
+
+! Hide shorts in video descriptions
+youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
+
+! Remove empty spaces in grid
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+
+! Title:  YouTube-Cosmetic-Filters-for-uBlock-Origin - Search results only
+! Description: Cosmetic filters to improve the search results.
+! Home: https://github.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin
+
+! Search Results
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/For you/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/People also watched/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Previously watched/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related to your search/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related Movies/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/New for you/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Channels new to you/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Related chapters/i))
+www.youtube.com##ytd-shelf-renderer.style-scope:has(span:has-text(/Explore more/i))
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Latest from/i))
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Results for similar searches/i))
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has-text(/From related searches/i)
+www.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/People also search for/i)
+www.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/Searches related to/i)
+www.youtube.com##ytd-movie-renderer.ytd-item-section-renderer.style-scope
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has-text(/Latest Posts From/i)
+www.youtube.com###about-these-results
+www.youtube.com##ytd-emergency-onebox-renderer.ytd-item-section-renderer.style-scope > .ytd-emergency-onebox-renderer.style-scope
+www.youtube.com##.ytd-item-section-renderer.style-scope > .ytd-ad-slot-renderer.style-scope
+
+! Title:  YouTube-Cosmetic-Filters-for-uBlock-Origin - Landing page only
+! Description: Cosmetic filters to improve the home section.
+! Home: https://github.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin
+
+! Home
+www.youtube.com##contents.ytd-shelf-renderer.style-scope:has-text(/People also watched/i)
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope:has(span:has-text(/Watch again/i))
+www.youtube.com##ytd-horizontal-card-list-renderer.ytd-item-section-renderer.style-scope:has-text(/People also watched/i)
+www.youtube.com###content > .ytd-rich-section-renderer.style-scope
+www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-row.style-scope > #star-survey
+www.youtube.com###merch-shelf > .ytd-watch-flexy.style-scope
+www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-row.style-scope > .ytd-feed-nudge-renderer.style-scope
+www.youtube.com##ytd-rich-item-renderer.style-scope > .ytd-feed-nudge-renderer.style-scope
+www.youtube.com##.ytd-rich-item-renderer.style-scope > .ytd-feed-nudge-renderer.style-scope
+www.youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope
+
+! Reduce empty slots in grid
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+
+! Keyword Bar (removes "sort by" on video page)
+www.youtube.com###scroll-container > .ytd-feed-filter-chip-bar-renderer.style-scope
+www.youtube.com###header > .ytd-rich-grid-renderer.style-scope
+! Voice Search Button
+www.youtube.com###voice-search-button
+
+!!! MOBILE !!!
+
+! Hide all videos in home feed containing the phrase "#shorts"
+m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#shorts))
+m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Shorts))
+m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#short))
+m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Short))
+
+! Hide all videos in subscription feed containing the phrase "#shorts"
+m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#shorts))
+m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Shorts))
+m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#short))
+m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Short))
+
+! Hide shorts button in the bottom navigation bar
+m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+
+! Hide all videos with the shorts indicator on the thumbnail
+m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
+
+! Hide shorts sections
+m.youtube.com##ytm-rich-section-renderer:has(ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper:has-text(Shorts)))
+m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper:has-text(Shorts))
+
+! Hide shorts tab on channel pages
+m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
