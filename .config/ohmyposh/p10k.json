@@ -53,7 +53,7 @@
       "segments": [
         {
           "template": " ",
-          "foreground": "p:overlay1",
+          "foreground": "p:subtext0",
           "background": "transparent",
           "type": "text",
           "style": "plain"
