@@ -13,6 +13,7 @@ brew "chafa"
 brew "coreutils"
 brew "cowsay"
 brew "curl"
+brew "deno"
 brew "duf"
 brew "eza"
 brew "fastfetch"
@@ -59,6 +60,7 @@ brew "uv"
 brew "vim"
 brew "vivid"
 brew "wget"
+brew "yajl"
 brew "yazi"
 brew "yt-dlp"
 brew "zoxide"
@@ -73,6 +75,7 @@ cask "font-symbols-only-nerd-font"
 cask "ghostty"
 cask "iina"
 cask "imageoptim"
+cask "imaging-edge-webcam"
 cask "keepassxc"
 cask "macdroid"
 cask "monitorcontrol"
@@ -90,7 +93,6 @@ cask "zen"
 mas "AdGuard for Safari", id: 1440147259
 mas "Dropover", id: 1355679052
 mas "Encrypto", id: 935235287
-mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
