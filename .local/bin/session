@@ -2,6 +2,11 @@
 
 SESSION_NAME="Code"
 
+# Don't start tmux in Apple Terminal
+if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
+  exit 0
+fi
+
 # Check if already inside a tmux session
 if [ -n "$TMUX" ]; then
   exit 0
