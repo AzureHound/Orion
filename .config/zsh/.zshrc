@@ -131,5 +131,8 @@ export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
-"session"
+# Bin
+export PATH="$HOME/.local/bin:$PATH"
+
+session
 # colorscript
