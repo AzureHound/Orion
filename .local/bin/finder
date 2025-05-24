@@ -1,81 +1,83 @@
 #!/bin/bash
 
-# Script to prevent Finder from becoming focused automatically
-# Run this script in the background to monitor and prevent Finder focus
-
 monitor_focus() {
-    while true; do
-        # Get the current frontmost application
-        current_app=$(osascript -e 'tell application "System Events" to get name of first application process whose frontmost is true')
-        
-        if [ "$current_app" = "Finder" ]; then
-            # Get list of visible applications excluding Finder
-            visible_apps=$(osascript -e '
-                tell application "System Events"
-                    set appList to {}
-                    repeat with proc in (every application process whose visible is true)
-                        if name of proc is not "Finder" then
-                            set end of appList to name of proc
-                        end if
-                    end repeat
-                    return appList
-                end tell
-            ')
-            
-            # If there are other visible apps, switch to one of them
-            if [ ! -z "$visible_apps" ] && [ "$visible_apps" != "" ]; then
-                # Get the first non-Finder app and activate it
-                target_app=$(echo "$visible_apps" | cut -d',' -f1 | tr -d ' ')
-                if [ ! -z "$target_app" ]; then
-                    osascript -e "tell application \"$target_app\" to activate" 2>/dev/null
-                fi
-            else
-                # Hide Finder if no other apps are visible
-                osascript -e 'tell application "Finder" to set visible to false'
-            fi
+  finder_manually_opened=false
+  last_app=""
+  last_finder_state=""
+  finder_focus_count=0
+
+  while true; do
+    current_app=$(osascript -e 'tell application "System Events" to get name of first application process whose frontmost is true' 2>/dev/null)
+
+    if [ "$current_app" != "$last_app" ]; then
+      if [ "$current_app" = "Finder" ]; then
+        finder_focus_count=$((finder_focus_count + 1))
+
+        if [ $finder_focus_count -eq 1 ]; then
+          sleep 0.1
+          still_finder=$(osascript -e 'tell application "System Events" to get name of first application process whose frontmost is true' 2>/dev/null)
+          if [ "$still_finder" = "Finder" ]; then
+            finder_manually_opened=true
+          fi
         fi
-        
-        sleep 0.5  # Check every half second
-    done
-}
-
-# Function to run the monitor in background
-start_monitor() {
-    echo "Starting Finder focus prevention monitor..."
-    monitor_focus &
-    echo $! > ~/.finder_focus_monitor.pid
-    echo "Monitor started with PID: $(cat ~/.finder_focus_monitor.pid)"
-}
-
-# Function to stop the monitor
-stop_monitor() {
-    if [ -f ~/.finder_focus_monitor.pid ]; then
-        pid=$(cat ~/.finder_focus_monitor.pid)
-        kill $pid 2>/dev/null
-        rm ~/.finder_focus_monitor.pid
-        echo "Monitor stopped"
-    else
-        echo "No monitor running"
+      else
+        finder_focus_count=0
+        if [ "$last_app" = "Finder" ]; then
+          finder_state=$(osascript -e 'tell application "Finder" to get visible' 2>/dev/null)
+          if [ "$finder_state" = "false" ]; then
+            finder_manually_opened=false
+          fi
+        fi
+      fi
+      last_app="$current_app"
     fi
+
+    if [ "$current_app" = "Finder" ] && [ "$finder_manually_opened" = "false" ] && [ $finder_focus_count -gt 1 ]; then
+      target_app=$(osascript -e 'tell application "System Events" to get name of first application process whose (visible is true and name is not "Finder")' 2>/dev/null)
+      [ -n "$target_app" ] && osascript -e "tell application \"$target_app\" to activate" 2>/dev/null
+    fi
+
+    sleep 1
+  done
 }
 
-# Handle command line arguments
+start_monitor() {
+  pid_file=~/.finder_focus_monitor.pid
+  [ -f "$pid_file" ] && kill -0 "$(cat "$pid_file")" 2>/dev/null && {
+    echo "Monitor already running"
+    return 1
+  }
+
+  monitor_focus &
+  echo $! >"$pid_file"
+  echo "Monitor started with PID: $(cat "$pid_file")"
+}
+
+stop_monitor() {
+  pid_file=~/.finder_focus_monitor.pid
+  if [ -f "$pid_file" ]; then
+    kill "$(cat "$pid_file")" 2>/dev/null && echo "Monitor stopped" || echo "Process not found"
+    rm -f "$pid_file"
+  else
+    echo "No monitor running"
+  fi
+}
+
 case "$1" in
-    start)
-        start_monitor
-        ;;
-    stop)
-        stop_monitor
-        ;;
-    restart)
-        stop_monitor
-        start_monitor
-        ;;
-    *)
-        echo "Usage: $0 {start|stop|restart}"
-        echo "  start   - Start the Finder focus prevention monitor"
-        echo "  stop    - Stop the monitor"
-        echo "  restart - Restart the monitor"
-        exit 1
-        ;;
+start) start_monitor ;;
+stop) stop_monitor ;;
+restart)
+  stop_monitor
+  start_monitor
+  ;;
+status)
+  pid_file=~/.finder_focus_monitor.pid
+  [ -f "$pid_file" ] && kill -0 "$(cat "$pid_file")" 2>/dev/null &&
+    echo "Monitor running with PID: $(cat "$pid_file")" || echo "Monitor not running"
+  ;;
+*)
+  echo "Usage: $0 {start|stop|restart|status}"
+  echo "Prevents accidental Finder focus switching while respecting manual usage"
+  exit 1
+  ;;
 esac
