@@ -1,0 +1,11 @@
+session_name: Notes
+windows:
+  - window_name: Obsidian
+    start_directory: ~/Obsidian
+    panes:
+      - shell_command:
+          - nvim
+  - window_name: To-Do
+    panes:
+      - shell_command:
+          - dooit
