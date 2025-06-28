@@ -4,38 +4,59 @@
 [user]
   name = Wolf
   email = 183492338+AzureHound@users.noreply.github.com
-
-[safe]
-  directory = ~/Developer
+	signingkey = 564CBBE2E7CDB1B0
 
 [init]
   defaultBranch = main
 
+[safe]
+  directory = ~/Developer
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /opt/homebrew/bin/gpg
+
 [core]
   editor = nvim
   pager = delta #--dark --diff-so-fancy
+  compression = 9
   excludesfile = ~/.config/git/ignore
 
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta
 
 [delta]
   features = catppuccin-macchiato
+  decoration = true
   hyperlinks = true
   side-by-side = true
   true-color = always
   line-numbers = true
   line-numbers-right-format = "│ "
 
-[push]
-  default = current
+[status]
+  branch = true
+  short = true
+  showStash = true
+  showUntrackedFiles = all
 
 [pull]
   rebase = true
   default = current
 
+[push]
+  default = current
+
 [merge]
     conflictstyle = zdiff3
+
+[diff]
+  colorMoved = default
+  context = 3
+  renames = copies
+  interHunkContext = 10
 
 [rebase]
   autoStash = true
@@ -43,3 +64,10 @@
 [color "diff"]
   old = red strike
   new = green italic
+
+[color "branch"]
+  current  = magenta
+  local    = default
+  remote   = yellow
+  upstream = green
+  plain    = blue

@@ -1,0 +1,102 @@
+# <emoji> <type>(<scope>): <subject>
+# |<----  Using a Maximum Of 50 Characters  ---->|
+
+
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+# Explain what and why vs. how
+#
+# --- Available Types with Emojis ---
+# ♿️ access:      Improve accessibility
+# 📈 analytics:   Add or update analytics
+# 💫 animations:  Add or update animations
+# 🍱 assets:      Add or update assets
+# 🛂 auth:        Work on authorization and permissions
+# 💥 breaking:    Introduce breaking changes
+# 📦️ build:       Build system changes
+# 👔 business:    Add or update business logic
+# 🔧 chore:       Maintenance tasks or non-code changes
+# 👷 ci:          CI related changes
+# 💬 comments:    Add comments to the code
+# ⚙️ config:      Changes in project configuration
+# 👥 contributors: Add or update contributors
+# 🧐 dataexplore: Data exploration/inspection
+# 🗃️ db:          Database related changes
+# ⚰️ deadcode:    Remove dead code
+# 📦️ deps:        Update dependencies
+# 🗑️ deprecate:   Deprecate code that needs cleaning
+# 📚 docs:        Documentation changes
+# 🥚 easter:      Add or update an easter egg
+# 🚨 error:       Handle errors or warnings
+# ⚗️ experiment:  Perform experiments
+# 🧪 failtest:    Add a failing test
+# ✨ feat:        Add a new feature
+# 📁 files:       Changes in files or directories
+# 🐛 fix:         Fix a bug
+# 🚩 flags:       Add, update, or remove feature flags
+# 🙈 gitignore:   Add or update .gitignore file
+# 🩺 health:      Add or update healthcheck
+# 🚑️ hotfix:      Critical hotfix
+# 🌐 i18n:        Internationalization and localization
+# 🧱 infrastructure: Infrastructure related changes
+# ⭐ init:       Initialize project
+# 📄 license:     Add or update license
+# 🔊 logs:        Add or update logs
+# 🔀 merge:       Merge branch or pull request
+# 🤡 mock:        Mock things
+# ✈️ offline:     Improve offline support
+# 🚀 perf:        Performance improvements
+# 🩹 quickfix:    Simple fix for a non-critical issue
+# ♻️ refactor:    Code refactoring
+# 🗑️ remove:      Remove obsolete code
+# 📱 responsive:  Work on responsive design
+# ⏪️ revert:      Reverts a previous commit
+# 🔇 rmlogs:      Remove logs
+# 🛡️ security:    Address security vulnerabilities
+# 🌱 seed:        Add or update seed files
+# 🔍️ seo:         Improve SEO
+# 📸 snapshot:    Add or update snapshots
+# 💸 sponsorship: Add money related infrastructure
+# 💄 style:       Code style changes
+# 🧪 test:        Add or modify tests
+# 🧵 thread:      Add or update multithreading code
+# 🏷️ types:       Add or update types
+# ✏️ typo:        Fix typos
+# 🎨 ux:          Improve user experience
+# 🦺 validation:  Add or update validation code
+#
+# --- Common Scopes ---
+# api               - API module
+# auth              - Authentication module
+# authentication    - Authentication feature
+# authorization     - Authorization feature
+# babel             - Babel configuration
+# checkout          - Checkout workflow
+# config            - Configuration
+# data-processing   - Data processing module
+# database-config   - Database configuration
+# deployment        - Deployment tasks
+# e2e-tests         - End-to-end tests
+# eslint            - ESLint configuration
+# footer            - Footer component
+# header            - Header component
+# integration-tests - Integration tests
+# logging           - Logging module
+# modal             - Modal component
+# onboarding        - Onboarding workflow
+# payment           - Payment feature
+# search            - Search feature
+# server-config     - Server configuration
+# sidebar           - Sidebar component
+# ui                - UI components
+# unit-tests        - Unit tests
+# user-management   - User management module
+# user-profile      - User profile workflow
+# utils             - Utilities
+# webpack           - Webpack configuration
+#
+# Include any relevant issue numbers: Fixes #123, Relates to #456
+#
+# Breaking changes should be clearly indicated:
+# BREAKING CHANGE: <describe the change>
+#
+# Co-authored-by: name <email@example.com>
