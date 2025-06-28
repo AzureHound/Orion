@@ -1,37 +1,39 @@
-# aliasis
+#!/usr/bin/env zsh
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias c='clear'
+
 alias l='eza --long --header -a --icons --git --group-directories-first'
 alias la='eza -a --icons'
 alias ls='eza --icons'
 alias ll='eza -a -l --icons'
 alias cp='cp -i'
 alias mv='mv -i'
+alias rg='rg -i'
+alias df='df -h'
+alias mkdir='mkdir -p'
 alias tree='eza -a -T --git-ignore --icons'
 alias lta4="eza -lTag --git-ignore --level=4 --icons"
-alias rg='rg -i'
-alias c='clear'
+alias grep='grep --color=auto'
+alias lg='lazygit'
+alias glogs='git log --oneline --graph --all'
+# alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
 
-alias fetch="fastfetch"
-alias gfetch="onefetch"
-alias info="tldr"
 alias bonsai='cbonsai --seed 119 --live'
 alias clock='tty-clock -DScC6b'
+alias fetch="fastfetch"
 alias gen='tgpt -i'
-alias matrix="unimatrix -n -c red -s 90 -l 'o'"
-alias preview='chafa -f kitty'
-alias weather='curl "v2.wttr.in/Agartala?F"'
-
-alias branch='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff --color=always {1} | delta" --pointer="" | xargs git checkout'
-alias glog='git log --oneline --graph --all'
-alias lg='lazygit'
-
-alias sysupgrade='brew update && \
-brew upgrade && \
-brew autoremove && \
-brew cleanup && \
-brew bundle dump --force --file=~/.config/brew/Brewfile && \
-zinit self-update && \
-zinit update && \
-ya pack -u'
+alias gfetch="onefetch"
+alias info="tldr"
+alias matrix="unimatrix -n -c yellow -s 90 -l 'o'"
+alias powertop='sudo powertop'
+alias preview='kitten icat'
+alias v='nvim'
+alias zed='zeditor'
+alias web='w3m duckduckgo.com'
+alias weather='gust -f'
 
 alias anime='FZF_DEFAULT_OPTS="\
 --height=100% --info=right --border rounded --pointer=\ --margin=1 --padding=1 \

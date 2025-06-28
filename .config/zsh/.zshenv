@@ -1,2 +1,0 @@
-# Source .zaliases
-. $ZDOTDIR/.zaliases

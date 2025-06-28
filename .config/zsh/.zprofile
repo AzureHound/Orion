@@ -1,60 +1,32 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
 export TERM=xterm-256color
-
-# XDG Directories
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_BIN_HOME="$HOME/.local/bin"
-export PATH="$HOME/.atuin/bin:$PATH"
-
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export RIPGREP_CONFIG_PATH="$HOME/.config/rg/.ripgreprc"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-
-# History
-export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
-export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
-
-# Export
-export EDITOR=nvim
-export VISUAL="$EDITOR"
-export SUDO_EDITOR="vim"
-
-# Ls
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
-
-# FZF
-export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore"
-export fzf_fd_opts="--hidden --color=always"
-export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --preview \"\${fzf_preview_dir_cmd} {2}\""
-export fzf_preview_dir_cmd="eza --long --header --icons --all --color=always --group-directories-first --hyperlink"
-export FZF_DEFAULT_OPTS="--height=100% --info=right --border rounded --pointer='' --marker '⇒' --margin=1 --padding=1 \
---color=bg+:-1,gutter:-1,spinner:#f4dbd6,hl:#ed8796 \
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
---color=selected-bg:#494d64 \
---bind 'ctrl-u:preview-half-page-up' \
---bind 'ctrl-d:preview-half-page-down' \
---bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)' \
---multi --prompt '󰥨 Search: ' --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
-
-# Tmux_FZF
-export FZF_CTRL_R_OPTS="--reverse"
-export FZF_TMUX_OPTS="-p"
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-# pipx
+# PERL
+PATH="/home/eyes/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/eyes/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/eyes/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/eyes/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/eyes/perl5"; export PERL_MM_OPT;
+export PERL5LIB=/home/eyes/perl5/lib/perl5:$PERL5LIB
+
+# Pipx
 export PATH="$PATH:/Users/eyes/Developer/repos/Orion/.local/bin"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Sed
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Tmux_FZF
+# export FZF_CTRL_R_OPTS="--reverse"
+# export FZF_TMUX_OPTS="-p"
+
+# UV
+eval "$(uv generate-shell-completion zsh)"
