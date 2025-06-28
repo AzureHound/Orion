@@ -1,53 +1,205 @@
-
-# Esc
+# esc
 [[input.prepend_keymap]]
 on   = "<Esc>"
 run  = "close"
 desc = "Cancel input"
 
-# preview
-[[manager.prepend_keymap]]
-on = "<C-p>"
-run = '''
-  shell 'qlmanage -p "$@"'
-'''
+# shell
+[[mgr.prepend_keymap]]
+on = [ "!" ]
+run = 'shell "$SHELL" --block'
+desc = "Open shell here"
+
+# cursor movement
+[[mgr.prepend_keymap]]
+on = "K"
+run = "arrow -50%"
+desc = "Move cursor up half page"
+
+[[mgr.prepend_keymap]]
+on = "J"
+run = "arrow 50%"
+desc = "Move cursor down half page"
+
+[[mgr.prepend_keymap]]
+on = "<A-k>"
+run = "arrow -5"
+desc = "Move cursor up half page"
+
+[[mgr.prepend_keymap]]
+on = "<A-j>"
+run = "arrow 5"
+desc = "Move cursor down half page"
+
+# file finding
+[[mgr.prepend_keymap]]
+on = [ "f", "g" ]
+run = "plugin fg"
+desc = "find file by content (fuzzy match)"
+
+[[mgr.prepend_keymap]]
+on = [ "f", "f" ]
+run = "filter --smart"
+desc = "Filter files"
+
+# search & navigation
+[[mgr.prepend_keymap]]
+on = [ "S" ]
+run = "plugin searchjump --autocd"
+desc = "Flash"
+
+# clipboard
+[[mgr.prepend_keymap]]
+on = [ "<C-y>" ]
+run = 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'
+desc = "Copy to clipboard"
+
+# create directory
+[[mgr.prepend_keymap]]
+on = "A"
+run = "create --dir"
+desc = "Create a dir"
+
+# git navigation
+[[mgr.prepend_keymap]]
+on = [ "g", "r" ]
+run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
+desc = "Root of Git Repo"
+
+# tab management
+[[mgr.prepend_keymap]]
+on = "H"
+run = "tab_switch -1 --relative"
+desc = "Switch to the previous tab"
+
+[[mgr.prepend_keymap]]
+on = "L"
+run = "tab_switch 1 --relative"
+desc = "Switch to the next tab"
+
+[[mgr.prepend_keymap]]
+on = "<"
+run = "tab_swap -1"
+desc = "Swap current tab with previous tab"
+
+[[mgr.prepend_keymap]]
+on = ">"
+run = "tab_swap 1"
+desc = "Swap current tab with next tab"
+
+# open files
+[[mgr.append_keymap]]
+on = [ "e" ]
+run = "open"
+desc = "Open the selected files"
+
+[[mgr.append_keymap]]
+on = [ "E" ]
+run = "open --interactive"
+desc = "Open the selected files interactively"
+
+# completion navigation
+[[completion.prepend_keymap]]
+on = "<C-k>"
+run = "arrow -1"
+desc = "Move cursor up"
+
+[[completion.prepend_keymap]]
+on = "<C-j>"
+run = "arrow 1"
+desc = "Move cursor down"
+
+# diff
+[[mgr.prepend_keymap]]
+on   = "<C-d>"
+run  = "plugin diff"
+desc = "Diff the selected with the hovered file"
+
+# compress
+[[mgr.prepend_keymap]]
+on   = [ "c", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+# eza
+[[mgr.prepend_keymap]]
+on = "E"
+run = "plugin eza-preview"
+desc = "Toggle tree/list dir preview"
+
+[[mgr.prepend_keymap]]
+on = "-"
+run = "plugin eza-preview --args='--inc-level'"
+desc = "Increment tree level"
+
+[[mgr.prepend_keymap]]
+on = "_"
+run = "plugin eza-preview --args='--dec-level'"
+desc = "Decrement tree level"
+
+[[mgr.prepend_keymap]]
+on = "$"
+run = "plugin eza-preview --args='--toggle-follow-symlinks'"
+desc = "Toggle tree follow symlinks"
 
 # hide-preview
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = "T"
 run  = "plugin hide-preview"
 desc = "Hide or show preview"
 
 # lazygit
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "i" ]
 run  = "plugin lazygit"
 desc = "run lazygit"
 
-#searchjump
-[[manager.prepend_keymap]]
-on   = [ "i" ]
-run = "plugin searchjump"
-desc = "searchjump mode"
+# mount
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
 
-# smart-filter
-[[manager.prepend_keymap]]
-on   = "F"
-run  = "plugin smart-filter"
-desc = "Smart filter"
+# preview
+[[mgr.prepend_keymap]]
+on = "<C-u>"
+run = "seek -5"
+desc = "Seek up 5 units in the preview"
 
-#ripgrep
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
+on = "<C-d>"
+run = "seek 5"
+desc = "Seek down 5 units in the preview"
+
+# ripgrep
+[[mgr.prepend_keymap]]
 on   = [ "f","g" ]
 run  = "plugin fg"
 desc = "find file by content (fuzzy match)"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "f","G" ]
 run  = "plugin fg --args='rg'"
 desc = "find file by content (ripgrep match)"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "f","f" ]
 run  = "plugin fg --args='fzf'"
 desc = "find file by filename"
+
+# rsync
+[[mgr.prepend_keymap]]
+on   = [ "R" ]
+run  = "plugin rsync --args='user@server.com'"
+desc = "Copy files using rsync"
+
+# searchjump
+[[mgr.prepend_keymap]]
+on   = [ "i" ]
+run = "plugin searchjump  --autocd"
+desc = "searchjump mode"
+
+# smart-filter
+[[mgr.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
