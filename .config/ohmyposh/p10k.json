@@ -89,7 +89,7 @@
           }
         },
         {
-          "template": "{{if .Ahead}}↑{{.Ahead}}{{end}}{{if .Behind}}↓{{.Behind}}{{end}}{{- if gt (add .Staging.Added .Staging.Modified) 0 }}{{ add .Staging.Added .Staging.Modified }}{{ end -}}{{- if gt .Working.Modified 0 }}!{{ .Working.Modified }}{{ end -}}{{- if gt .Working.Untracked 0 }}?{{ .Working.Untracked }}{{ end -}}",
+          "template": "{{if .Ahead}}↑{{.Ahead}}{{end}}{{if .Behind}}↓{{.Behind}}{{end}}{{- if gt (add .Staging.Added .Staging.Modified) 0 }}+{{ add .Staging.Added .Staging.Modified }}{{ end -}}{{- if gt .Working.Modified 0 }}!{{ .Working.Modified }}{{ end -}}{{- if gt .Working.Untracked 0 }}?{{ .Working.Untracked }}{{ end -}}",
           "foreground": "p:red",
           "background": "transparent",
           "type": "git",
