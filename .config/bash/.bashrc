@@ -1,41 +1,13 @@
 #!/usr/bin/env bash
-BASH_HOME=~/.config/bash
-export HISTFILE=$XDG_CACHE_HOME/bash_history
 
-# Source
-source $BASH_HOME/.bash_aliases
-
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Prompt
-PS1='\[\e[0;36m\]\u\[\e[0;37m\]@\[\e[0;34m\]\h\[\e[0;33m\] \w\[\e[0m\]$(if git rev-parse --is-inside-work-tree &>/dev/null; then echo " \[\e[0;32m\] $(git branch 2>/dev/null | grep "\*" | sed "s/* //")"; fi) \[\e[0m\] '
+# HOME
+BASH_HOME=~/.config/bash
 
-# Starship
-# eval "$(starship init bash)"
-
-# I-beam cursor
-echo -ne "\e[5 q"
-
-# Editor
-export EDITOR=nvim
-export VISUAL="$EDITOR"
-export SUDO_EDITOR="vim"
-
-# Vivid
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
-
-# Yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-# NPM
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$PATH:$NPM_PACKAGES/bin"
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+# Configs
+source "$BASH_HOME/aliases.sh"
+source "$BASH_HOME/options.sh"
+source "$BASH_HOME/env.sh"
+source "$BASH_HOME/functions.sh"
+source "$BASH_HOME/init.sh"
