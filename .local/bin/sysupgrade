@@ -15,6 +15,7 @@ echo -e "\n${YELLOW}Homebrew 🍺${RESET}\n"
 brew update
 brew upgrade
 brew autoremove
+brew cleanup
 brew bundle dump --force --file=$HOME/.config/brew/Brewfile
 
 echo -e "\n${YELLOW}Zinit ${GREEN}󱐋 ${RESET}\n"
