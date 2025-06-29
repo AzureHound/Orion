@@ -84,5 +84,8 @@ export MANPAGER="vim -M +MANPAGER -"
 # MANPATH
 export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
 
+# Trash
+export PATH="/opt/homebrew/opt/trash-cli/bin:$PATH"
+
 # Vivid
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"

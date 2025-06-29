@@ -17,9 +17,9 @@ export PERL5LIB=/home/eyes/perl5/lib/perl5:$PERL5LIB
 export PATH="$PATH:/Users/eyes/Developer/repos/Orion/.local/bin"
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Sed
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"

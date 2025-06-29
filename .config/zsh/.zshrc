@@ -1,6 +1,4 @@
 # Homebrew
-export PATH="/opt/homebrew/opt/trash-cli/bin:$PATH"
-
 source ${ZDOTDIR}/env.zsh
 source ${ZDOTDIR}/zinit.zsh
 source ${ZDOTDIR}/compinit.zsh
