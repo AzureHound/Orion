@@ -1,10 +1,9 @@
-# Homebrew
 source ${ZDOTDIR}/env.zsh
 source ${ZDOTDIR}/zinit.zsh
 source ${ZDOTDIR}/compinit.zsh
-source ${ZDOTDIR}/history.zsh
 source ${ZDOTDIR}/options.zsh
 source ${ZDOTDIR}/init.zsh
+source ${ZDOTDIR}/history.zsh
 source ${ZDOTDIR}/functions.zsh
 source ${ZDOTDIR}/aliases.zsh
 source ${ZDOTDIR}/keybinds.zsh
