@@ -70,3 +70,4 @@ export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
 
 # Vivid
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
