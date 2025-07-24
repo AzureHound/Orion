@@ -38,6 +38,9 @@ export SUDO_EDITOR="vim"
 # Bin
 export PATH="$XDG_BIN_HOME:$PATH"
 
+# Color
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # FZF
 export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore"
 export fzf_fd_opts="--hidden --color=always"
@@ -67,7 +70,3 @@ export MANPAGER="vim -M +MANPAGER -"
 
 # MANPATH
 export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
-
-# Vivid
-# export LS_COLORS="$(vivid generate catppuccin-macchiato)"
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
