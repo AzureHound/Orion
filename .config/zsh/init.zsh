@@ -18,5 +18,5 @@ eval "$(zoxide init --cmd cd zsh)"
 #  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/p10k.json)"
 # fi
 
-# session
+session
 # colorscript
