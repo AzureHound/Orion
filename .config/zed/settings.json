@@ -1,10 +1,9 @@
 // Zed settings
 {
   // User Interface
-  "show_user_picture": false,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
+    "light": "Catppuccin Macchiato",
     "dark": "Catppuccin Macchiato"
   },
   "icon_theme": "Catppuccin Macchiato",
@@ -85,15 +84,13 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3-7-sonnet"
-    },
-    "version": "2"
+    }
   },
   // Features
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
-      "enabled": true,
-      "position": "left"
+      "enabled": true
     }
   },
   // Tweaks
@@ -101,7 +98,6 @@
   "ensure_final_newline_on_save": false,
   "remove_trailing_whitespace_on_save": true,
   "tabs": {
-    "show_icons": true,
     "git_status": true,
     "close_position": "right"
   },
