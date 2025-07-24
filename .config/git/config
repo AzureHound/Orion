@@ -12,11 +12,12 @@
 [safe]
   directory = ~/Developer
 
-[commit]
-	gpgsign = true
-
 [gpg]
-	program = /opt/homebrew/bin/gpg
+  program = /opt/homebrew/bin/gpg
+
+[commit]
+  gpgsign = true
+  template = ~/.config/git/gitmessage
 
 [core]
   editor = nvim
@@ -37,8 +38,8 @@
   line-numbers-right-format = "│ "
 
 [status]
-  branch = true
   short = true
+  branch = true
   showStash = true
   showUntrackedFiles = all
 
@@ -60,6 +61,10 @@
 
 [rebase]
   autoStash = true
+
+[color]
+  ui = true
+  grep = auto
 
 [color "diff"]
   old = red strike
