@@ -22,12 +22,12 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/.ripgreprc"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export W3M_DIR="$XDG_DATA_HOME/w3m"
+export ZSH_COMPDUMP="$XDG_CONFIG_HOME/zsh/.zcompdump"
 
 # History
-export LESSHISTFILE="$XDG_CACHE_HOME/less/less_history"
-export PYTHON_HISTORY="$XDG_CACHE_HOME/python/history"
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
+export PYTHON_HISTORY="$XDG_CACHE_HOME/python/history"
+export LESSHISTFILE="$XDG_CACHE_HOME/less/less_history"
 export ZSH_SESSION_DIR="$XDG_CACHE_HOME/zsh/sessions"; [ -d "$ZSH_SESSION_DIR" ] || mkdir -p "$ZSH_SESSION_DIR"
 
 # Editor
@@ -69,5 +69,5 @@ export MANPAGER="vim -M +MANPAGER -"
 export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man"
 
 # Vivid
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+# export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

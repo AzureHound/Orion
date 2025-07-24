@@ -6,5 +6,5 @@ source ${ZDOTDIR}/init.zsh
 source ${ZDOTDIR}/history.zsh
 source ${ZDOTDIR}/functions.zsh
 source ${ZDOTDIR}/aliases.zsh
-source ${ZDOTDIR}/keybinds.zsh
+source ${ZDOTDIR}/binds.zsh
 source $XDG_CONFIG_HOME/zsh/syntax-highlighting.zsh
